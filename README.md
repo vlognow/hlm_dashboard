@@ -60,7 +60,26 @@ Things that looked like ledgers but are not: `dbo.Claim.PaidDate` is the *client
   - `*output*.txt` — query outputs, git-ignored because they can contain PHI.
 - `dashboard/catalog_ranked_*.csv` — column catalogs of CarlQryRun and DMGMining ranked by date/money column counts.
 
-## Access notes
+## Direct SQL access from JupyterHub (preferred for ACT / SmartII / RXP)
+
+Verified 2026-09-17: JupyterHub reaches the Rawlings SQL Servers directly on port 1433, so Studio is not required.
+
+- Credentials: `~/sql_access.txt` (outside the repo, chmod 600, never commit). Domain login `TRGLLC\<user>`.
+- Driver: `pip install --user pymssql` (already installed for jovyan).
+- Helper: `dashboard/act_conn.py`
+
+```python
+import sys; sys.path.insert(0, '/home/jovyan/HLM dashboard/dashboard')
+import act_conn
+df = act_conn.q("SELECT TOP 5 * FROM sys.tables")                      # ACT on TRGACAP3 (192.168.251.12)
+df = act_conn.q("SELECT ...", db='SmartII')                             # same server, other DB
+df = act_conn.q("SELECT ...", db='DMGMining', host=act_conn.HOSTS['PIDCOB'])   # 192.168.251.18
+```
+
+Plain T-SQL (TOP, three-part names, cross-database joins all work). Use `WITH (NOLOCK)` on big tables.
+The ACT discovery script can be run as `python dashboard/run_act_discovery.py` (writes `dashboard/sql/act_discovery_output.txt`).
+
+## Studio access notes (fallback)
 
 Studio custom SQL is Spark-SQL flavoured: backtick-quote registered names, `LIMIT` not `TOP`, queries take minutes. Registering a table = `proj.createResource(name, sourceid, identifier, jdbc.0)`; identifiers must be two-part (`schema.table`) inside the source's own database. Source ids: 0010z — S000ei Subro_SRS, S000eq SubroReports, S000ej SubroIntelligence, S000eh RawlingsCommon; 0012k — S001ii CarlQryRun, S001ij DMGMining.
 

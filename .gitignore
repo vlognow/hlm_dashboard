@@ -5,3 +5,7 @@ __pycache__/
 
 # SQL Server query outputs (may contain PHI). Keep local.
 dashboard/sql/*output*.txt
+
+# credentials never enter the repo
+sql_access.txt
+*.creds
