@@ -9,3 +9,6 @@ dashboard/sql/*output*.txt
 # credentials never enter the repo
 sql_access.txt
 *.creds
+
+# Claude Code local settings (personal, machine-specific)
+.claude/settings.local.json
