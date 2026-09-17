@@ -20,13 +20,13 @@
 | Headline metric | **Gross $ posted as recovered in the trailing 30 days**, vs the prior 30 days. "Recovered" = a posted recovery/remittance transaction, dated by its posting date. Not lien amount, not invoiced amount, not settlement amount (those are leading indicators and appear on drill-down only). |
 | Pillar → L2 | Subro → **LRU / RCU / SRU** (recovery unit). COB → **program line** (default; alternatives below). Pharma → **solution line** (Pharmacy COB / Retro Term / Part D Compliance / High Cost Drugs) (default; alternatives below). |
 | Source of truth, Subro | `SubroReports.rpt.RecoveriesbyLOBTableau` (one row per file × recovery date, already carrying Team, LOB, Division and a posted/submitted flag; refreshed nightly ~04:00 ET; reconciles to the ledger within 1 %) for $, with `rpt.SubroDataWarehouseRecovery` (55.8 M-row posted-recovery ledger) as the audit fallback, joined to `rpt.SubroFile` for file attributes. `SubroReports.rp.SubroFile` does **not** exist; the object John shared is `rpt.SubroFile`, and "RPT.subro in ODS" is the same table (the Subro ODS team owns the `rpt` schema). |
-| Source of truth, COB | SmartII (investigations, invoices) + the posting system for COB remittances. Josh Roberts' team has already staged `CarlQryRun.overlap_detection.InvestigationInvoices` and `CEMOverlapsAndSmartIIResults` on TRGACAP3, reachable via Studio 0012k. Recovery-posting table still to be confirmed with Josh. |
+| Source of truth, COB | **`ACT.dbo.Remit` on TRGACAP3** (one row per posted remittance: `AddDate`, `DivisionId`, `AppliedAmt` / `ARDAmount` / `AuditorAmount`, `FeeValue`, `RecoveryTypeID`, `RecoveryMethodId`, `InvestigationId`), allocated to claims by `RemitPendingClaim` and mirrored in the per-claim `Transaction` ledger (`TransactionType` 6 = Posted). Located by the ACT schema discovery on 2026-09-16 (see `hlm_dashboard/README.md`); dollar aggregates not yet pulled. SmartII (`tblInvestigation`, `tblAudit`) and Josh Roberts' staged `CarlQryRun.overlap_detection.*` tables remain the source for investigation attributes and invoiced $. COB = ACT Division 2 per John Marcsik (ACT labels that division "Subro"; confirm with the step 2 client-code/audit-category queries). |
 | Source of truth, Pharma | `RXP.dbo.tblInvoice` / `tblInvoiceClaim` (billing) and `RxTra.dbo.tblRemitDetailTransaction` (append-only A/R ledger; a posting row = a recovery). Both on SQL alias `SQLUserRx`. Not yet directly profiled; documented from the Pharmacy team's Notion source-read. |
 | Model | One fact (`FactRecovery`, transaction grain, union of three pillars) + `DimDate` + `DimPillarUnit` + `DimClient` + `DimCase`. Import mode, one daily refresh. |
 | Pipeline | Per-pillar SQL job on the pillar's own server (Pattern 1) writes a thin daily fact table; a Python consolidator on **PC210344** (Pattern 2, Task Scheduler) unions the three into one reporting schema; Power BI refreshes from that one schema through the existing on-prem data gateway. |
 | Power BI estate | Machinify already has a **central, IT-owned Power BI Service tenant** with an approval workflow for workspaces, an on-prem data gateway run by the DBA team, and **F64 Fabric capacity** in the l-Rawlings tenant. This should not be a personal workspace. Recommend a dedicated workspace on the F64 capacity so execs view without Pro licenses. |
 | Posting seasonality (measured) | Subro recoveries post on business days only, and one month-end batch day carries 23–35 % of the month (Jun 30: $21.8M, Jul 15: $20.8M, Aug 31: $28.9M). A rolling 30-day Δ% therefore swung from **+6.7 % to −23.8 %** across four anchor days in Aug–Sep 2026 with no change in performance. The headline keeps the requested L30-vs-P30, but the page must also show the calendar-month view and the daily chart carries a 7-day rolling line — see §1.1. |
-| Biggest blockers | (1) COB recovery-posting source not confirmed; (2) read access to SmartII/RXP/RxTra (or a DMG-produced extract) for COB/Pharma; (3) an agreed cross-pillar client master; (4) DBA/ADO lead time for three scheduled jobs; (5) workspace + gateway data-source requests through Freshservice. |
+| Biggest blockers | (1) COB recovery-posting source located (`ACT.dbo.Remit`) but the monthly $ still has to be pulled and Division 2 = COB confirmed; (2) read access to SmartII/RXP/RxTra (or a DMG-produced extract) for COB/Pharma; (3) an agreed cross-pillar client master; (4) DBA/ADO lead time for three scheduled jobs; (5) workspace + gateway data-source requests through Freshservice. |
 
 ---
 
@@ -348,14 +348,14 @@ Underlying production systems (from the DBA alias list and Slack):
 |---|---|---|
 | **SmartII** | `SQLUserAudit` (replica `trgacap2`) | COB investigation system of record: `dbo.tblInvestigation` (InvestigationID, PotentialID, InvestigationStatus, AuditID), `dbo.tblAudit` (ClientCode, Auditor), `enterprisedistribution.CEMInvestigation`, invoice tables. |
 | **aCentricReports** | `SQLUtilMine4` | DMG reporting layer: `rpt.DistributedInventory` (PotentialId, RegisteredSystemId=14 for SMART). |
-| **ACT** | `SQLUserShared` | Claims/posting; the COBE dashboard PRD lists ACT as the likely source of `recovery_amount` (marked "ACT?" by the product team themselves). |
+| **ACT** | `SQLUserShared` (TRGACAP3, 192.168.251.12; copy on 192.168.251.18) | **Confirmed posting system for COB.** Schema discovery run 2026-09-16 with Windows auth (`sqlcmd -S TRGACAP3 -d ACT -E`): 521 tables. Recovery ledger = `dbo.Remit` (2.8 M posted remittances, `AddDate`, `DivisionId`, `AppliedAmt`/`ARDAmount`/`AuditorAmount`, `FeeValue`, `RecoveryTypeID`, `RecoveryMethodId`, `InvestigationId`, `RecoverySource`, `RemitterType`) → `RemitPendingClaim` (claim allocation: `Recovery`, `WriteOff`, `CoinDed`) → `Claim` (101.5 M lines, `DivisionID`, `ClientID`, `ParentClientCode`, `InvestigationID`, `COBID`) → `COB` (15.8 M cases, `AuditCategory`). `RemitCheck`→`Check` holds the physical check; `RemitTransaction`→`Transaction` (241 M) is the per-claim ledger with `TransactionType` 6 Posted / 10 Completed Recovery / 19 Invoice / 4 Write Off. `Division`: 1 Audit (Payment Integrity), 2 Subro, 3 Pharmacy, 4 CPS. The app's own views `vwRemitInfo` and `vTransactionDetail` show the intended joins (and `vTransactionDetail` excludes Division "Subro"). |
 | **OlympicGold** | `SQLUtilMine4` | Mining. |
 
 Volume and disposition shape (from `CEMOverlapsAndSmartIIResults`, 2021–2026): roughly 190k–250k CEM overlaps per source per year (`CAQH` vs `Production`), of which 10–13 % end with `IsInvoicePresent = 1`. Investigation statuses form a usable disposition taxonomy: invoiced outcomes are `Overpayment` (77k) and `Clsd` with invoice (197k); non-invoiced closures include `Clsd CS` (205k), `Clsd CP No Overpay` (84k), `Clsd NO OI` (57k), `Clsd Non Coop Member`, `Clsd No Person Match`, `Clsd Restricted Grp`, `Clsd Timely Filing`, and — relevant to the cost-avoidance question — **`Clsd PrePay Savings` (459 rows)**, the only explicit pre-pay outcome and far too small to headline. 1.69 M overlaps never reached a SmartII investigation (status NULL).
 
 What this tells us about COB grain: the operational unit is the **SmartII investigation** (one per validated overlap, keyed `InvestigationID`, with `AuditID` → client), invoicing hangs off the investigation (`IsInvoicePresent`, `InvoiceRecorded`), and the investigation status text ("Overpayment", "Clsd CP No Overpay", …) is the disposition. The L2 program line will come from the audit/investigation type on the SmartII side, and the client from `ClientCode`. None of the staged tables carries a **posting date or posted amount**, which is exactly the gap for the headline.
 
-**Open question that gates the COB pillar:** which table records the *posted* COB recovery with a date. Candidates: a SmartII remittance/payment table, ACT, or a finance table Josh's monthly recovery report reads. The standard client-facing "Monthly Recovery Report" (recoveries by payer, amount, claim type, method) proves such a source exists; Josh Roberts (DMG) and Brian Sharp / Christine H. (reporting) can name it in one conversation.
+**Resolved 2026-09-16 (pending the dollar pull):** the *posted* COB recovery with a date is `ACT.dbo.Remit.AddDate` / `AppliedAmt` (with `ARDAmount` and `AuditorAmount` as the split by who is credited, and `FeeValue` as Machinify's fee). John Marcsik pointed at ACT Division 2; the discovery confirmed the ledger structure but the monthly totals and the Division-2-is-COB check are still to be run (`hlm_dashboard/dashboard/sql/act_cob_step2_*.sql`). Two open semantics to settle with Josh Roberts / Finance once the numbers are in: (a) which of `AppliedAmt`, `ARDAmount`, `ARDAmount + AuditorAmount` is "gross recovered" and how reversals appear (`TransactionType` 11/12 Adj-Provider/Adj-Client, `RecoveryType` 29/30 Adjustment Gross/Net); (b) whether `RemitPendingClaim.WriteOff`/`CoinDed` should be excluded (they should, per the Subro definition).
 
 ### Pharma — RXP / RxTra
 
@@ -384,7 +384,7 @@ Not directly profiled from this environment (no Studio source for `SQLUserRx`). 
 | S5 | `SubroReports.rpt.FinanceClientCodeLookup`, `rpt.MapPlanAndFundingToLOB`, `dbo.LOBByChildCode_FinanceUpdate` | Subro ODS / Finance | Client code | Manual (Finance updates) | ✔ | `DimClient` (Subro side) |
 | S6 | `SubroReports.rpt.DimDate` | Subro ODS | Day | Static | ✔ | `DimDate` |
 | S7 | SmartII `dbo.tblInvestigation`, `dbo.tblAudit`, invoice tables (alias `SQLUserAudit`) | COB AppDev / Ops; DMG (Josh Roberts) for reporting | Investigation / invoice | Live OLTP; replica trgacap2 | ✖ (no Studio source) | `DimCase` (COB): investigation, client code, program line, status; invoiced $ |
-| S8 | COB posted-recovery table (**TBD**: SmartII remittance, ACT, or finance) | TBD with Josh Roberts / Brian Sharp | Posting | TBD | ✖ | `FactRecovery` (COB): RecoveryDate, GrossAmount, CaseKey |
+| S8 | `ACT.dbo.Remit` + `RemitPendingClaim` (+ `Transaction` for reconciliation), TRGACAP3 / `SQLUserShared` | ACT AppDev; John Marcsik (pointed us to Division 2); Josh Roberts (DMG) for semantics | Posted remittance (2.8 M rows); claim allocation | Live OLTP | ✖ Studio; ✔ direct `sqlcmd` with Windows auth from the analyst laptop | `FactRecovery` (COB): RecoveryDate = `AddDate`, GrossAmount = `AppliedAmt` (TBC), FeeAmount = `FeeValue`, CaseKey = `InvestigationId`, SourceTxnId = `Remit.ID`, method = `RecoveryMethodId`/`RecoveryTypeID`, client via `RemitPendingClaim`→`Claim.ClientID`→`Client.Code`/`ParentCode`, program line via `Claim.COBID`→`COB.AuditCategory` (TBC) |
 | S9 | `CarlQryRun.overlap_detection.InvestigationInvoices`, `CEMOverlapsAndSmartIIResults` (TRGACAP3) | Josh Roberts (DMG) | Investigation × invoice; overlap × investigation | Ad hoc / job-driven | Studio 0012k JDBC ✔ (user `COBOverLapPilot`) | Prototype the COB pillar and validate S7/S8 definitions before production access exists |
 | S10 | `aCentricReports.rpt.DistributedInventory` (alias `SQLUtilMine4`) | DMG | Potential/inventory | DMG jobs | ✖ | COB inventory context (not needed for v1) |
 | S11 | `RXP.dbo.tblInvestigation`, `tblClient`, `tblInvoice`, `tblInvoiceClaim` (alias `SQLUserRx`) | Pharmacy AppDev (Matt Weirich); LOB owner Brian Sharp | Investigation / invoice | Live OLTP | ✖ | `DimCase` (Pharma): solution line, client, PBM; invoiced $ |
@@ -458,7 +458,7 @@ Where `ExecReporting` is a small new schema/database on the Subro reporting serv
 | Pillar | Pattern | Why |
 |---|---|---|
 | Subrogation | **1 — SQL-only** (stored proc + SQL Agent job on the SubroReports server) | Everything needed is on one server; ODS already runs identical nightly jobs; no Python dependency. |
-| COB | **1 — SQL-only**, owned/co-owned by DMG (Josh Roberts) on TRGACAP3/SQLUserAudit | The joins (SmartII investigations ↔ postings ↔ client) are the kind of thing Josh's Agent jobs already do; cross-server access via the existing linked server to `sqluseraudit` he referenced. If the posting source turns out to be in ACT/finance on a server with no linked server, fall back to Pattern 2 on PC210344. |
+| COB | **1 — SQL-only** on TRGACAP3 (database `ACT`), owned/co-owned by DMG (Josh Roberts) | The posting source is `ACT.dbo.Remit` on TRGACAP3, the same server that hosts `CarlQryRun`, so the fact can be built with a single stored procedure and no linked server. SmartII investigation attributes (program line, invoiced $) come via `Remit.InvestigationId` → SmartII on `SQLUserAudit` through the linked server Josh already uses, or via `Claim.COBID`→`COB.AuditCategory` inside ACT if that proves to be the program line. Fall back to Pattern 2 on PC210344 only if a service account cannot get read on `ACT`. |
 | Pharma | **1 — SQL-only** on `SQLUserRx` | RXP and RxTra are on the same instance; a single proc joins them. |
 | Consolidation + monitoring | **2 — Python on PC210344** (Task Scheduler) | Cross-server union, freshness checks, alerting, and a place to run a reconciliation to ODS monthly numbers. Avoid PC210319 (crowded; DMG production). |
 
@@ -526,29 +526,44 @@ Keep the ledger-based version above as the reconciliation query (it has `TRC_Fee
 
 **Deployment route:** this is a new object on an ODS-owned server → open an **ADO deployment ticket** (the Rawlings TFS/ADO instance `devops.ado.rawlingslou.prod`, same route DMG used for `ADO868307`, `ADO915071`) with the DDL + proc + Agent job definition, and post in `#ask-dba` for scheduling and for the job operator/email alert (`sp_send_dbmail` operator on failure; DBA-standard). Lead time observed in Slack for comparable tickets: days to two weeks. Jennefer Murphy / Dan Stephens should be tagged as owners since it lands in their schema.
 
-### COB — draft SQL logic (`rpt.usp_Build_ExecRecoveryFact_COB`, TRGACAP3 or SQLUserAudit)
+### COB — draft SQL logic (`rpt.usp_Build_ExecRecoveryFact_COB`, TRGACAP3 database `ACT`)
 
 ```sql
--- Skeleton until the posting table is confirmed. Keys and names from SmartII as seen in Josh Roberts' queries.
+-- Real column names from the ACT discovery of 2026-09-16. Amount column (AppliedAmt vs ARDAmount) and
+-- the Division 2 = COB assumption are to be confirmed by dashboard/sql/act_cob_step2_*.sql.
 SELECT 'COB' AS Pillar,
-       CAST(p.PostedDate AS date)          AS RecoveryDate,      -- TBD: SmartII remittance / ACT posting
-       p.PostedAmount                      AS GrossAmount,
-       p.FeeAmount                         AS FeeAmount,
-       CAST(i.InvestigationID AS varchar(20)) AS CaseKey,
-       CAST(p.PostingId AS varchar(30))    AS SourceTxnId,
-       pl.ProgramLine                      AS UnitKey,            -- map from investigation type / audit type
-       a.ClientCode                        AS ClientKey,
-       oi.OtherInsurerName                 AS CounterpartyKey,
-       GETDATE()                           AS LoadTs
-FROM   SmartII.dbo.tblInvestigation i
-JOIN   SmartII.dbo.tblAudit a           ON a.AuditID = i.AuditID
-JOIN   <posting table> p                ON p.InvestigationID = i.InvestigationID
-LEFT JOIN <program-line map> pl         ON pl.InvestigationTypeId = i.InvestigationTypeId
-LEFT JOIN <other-insurer> oi            ON oi.InvestigationID = i.InvestigationID
-WHERE  p.PostedDate >= DATEADD(DAY,-400,GETDATE());
+       CAST(r.AddDate AS date)             AS RecoveryDate,      -- ACT.dbo.Remit posting date
+       r.AppliedAmt                        AS GrossAmount,       -- TBC vs ARDAmount / ARDAmount + AuditorAmount
+       r.FeeValue                          AS FeeAmount,
+       CAST(r.InvestigationId AS varchar(20)) AS CaseKey,
+       CAST(r.ID AS varchar(30))           AS SourceTxnId,
+       cob.AuditCategory                   AS UnitKey,           -- TBC: program line; else SmartII investigation type via InvestigationId
+       cl.Code                             AS ClientKey,         -- via RemitPendingClaim -> Claim -> Client; cl.ParentCode for the parent
+       rt.Name                             AS RecoveryTypeName,  -- Cash / Direct / Retraction / Check / EFT / Card / Adjustment
+       rm.Name                             AS RecoveryMethodName
+FROM ACT.dbo.Remit r WITH (NOLOCK)
+OUTER APPLY (SELECT TOP 1 ClaimID FROM ACT.dbo.RemitPendingClaim WITH (NOLOCK) WHERE RemitID = r.ID) rpc
+LEFT JOIN ACT.dbo.Claim  c   WITH (NOLOCK) ON c.ID  = rpc.ClaimID
+LEFT JOIN ACT.dbo.Client cl  WITH (NOLOCK) ON cl.ID = c.ClientID
+LEFT JOIN ACT.dbo.COB    cob WITH (NOLOCK) ON cob.ID = c.COBID
+LEFT JOIN ACT.dbo.RecoveryType rt ON rt.ID = r.RecoveryTypeID
+LEFT JOIN ACT.ruin.RecoveryMethod rm ON rm.RecoveryMethodId = r.RecoveryMethodId
+WHERE r.DivisionId = 2                                          -- COB medical per John Marcsik (ACT labels it "Subro")
+  AND r.AddDate >= @from AND r.AddDate < @to;
+-- Previous skeleton kept for reference (SmartII-side names):
+--     CAST(p.PostedDate AS date)          AS RecoveryDate,
+--     p.PostedAmount                      AS GrossAmount,
+--     p.FeeAmount                         AS FeeAmount,
+--     CAST(i.InvestigationID AS varchar(20)) AS CaseKey,
+--     CAST(p.PostingId AS varchar(30))    AS SourceTxnId,
+--     pl.ProgramLine                      AS UnitKey,
+--     a.ClientCode                        AS ClientKey,
+--     oi.OtherInsurerName                 AS CounterpartyKey
+-- FROM SmartII.dbo.tblInvestigation i JOIN SmartII.dbo.tblAudit a ON a.AuditID = i.AuditID
+-- JOIN <posting table> p ON p.InvestigationID = i.InvestigationID ...
 ```
 
-Until S8 is confirmed, prototype the pillar from `CarlQryRun.overlap_detection.InvestigationInvoices` (invoiced $, dated) so the page layout can be tested with real COB shapes; label the card "Invoiced" in the prototype, never "Recovered".
+Counterparty (other insurer / payer) is not on `Remit`; it comes from SmartII via `Remit.InvestigationId` once the linked server is available, or from `Remit.RemitterType` / `RecoverySource` as a coarse stand-in. Until step 2 has run, the prototype can still use `CarlQryRun.overlap_detection.InvestigationInvoices` (invoiced $, dated) for layout testing; label that card "Invoiced", never "Recovered".
 
 **Deployment route:** Josh Roberts' DMG team owns the Agent jobs on TRGACAP3 → ask them to add this proc to their nightly chain (they already schedule reporting steps there), then the same ADO ticket route for production. Alert: their existing job-failure notifications to `#ask-dba`.
 
@@ -613,7 +628,7 @@ If the DBAs would rather not have Python touch three servers, the alternative is
 
 | # | Item | Owner to ask | Why it blocks |
 |---|---|---|---|
-| 1 | **COB posted-recovery source**: which table/date is "recovered" for COB (SmartII remittance? ACT? finance)? Does Josh's Monthly Recovery Report read it? | Josh Roberts (DMG); Brian Sharp / Christine H. (COB reporting) | Without it the COB pillar can only show *invoiced*. |
+| 1 | **COB posted-recovery source** — located: `ACT.dbo.Remit` (`AddDate`, `AppliedAmt`), Division 2. Still to confirm: (a) Division 2 is the COB medical book (ACT labels it "Subro"); (b) gross = `AppliedAmt` vs `ARDAmount`(+`AuditorAmount`); (c) how reversals/adjustments post; (d) does Josh's Monthly Recovery Report read `Remit`? | John Marcsik (pointed at Division 2); Josh Roberts (DMG); Brian Sharp / Christine H. (COB reporting) | Until the step 2 queries run and (a)–(c) are agreed, the COB pillar has a source but no number. |
 | 2 | Confirm Subro unit logic (rep team at recovery date; 41/42 SRU, 45 RCU, else LRU) matches ODS's `Recovery Unit`, and how Global / WC / senior-LRU are treated | Jennefer Murphy, Dan Stephens (Subro ODS) | L2 numbers must reconcile to ODS's own dashboard. |
 | 3 | Confirm what I measured: `rpt.RecoveriesbyLOBTableau` refreshes nightly ~04:00 ET with data through the current day, `IsPostedRecovery` separates posted from submitted, and the ledger carries ~5k negative (reversal) rows per month; also whether "posted" here means finance-posted or analyst-entered | Subro ODS | Determines whether a T-1 daily number is trustworthy and what execs will call "recovered". |
 | 4 | Read access for a pipeline service account to SmartII (`SQLUserAudit`), `SQLUserRx` (RXP/RxTra), and the COB posting source; or an agreed DMG-produced extract | DBAs (`#ask-dba`), Matt Weirich (AppDev), Josh Roberts | Pharma and COB procs cannot be written or tested from here. |
