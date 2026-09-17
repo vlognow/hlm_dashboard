@@ -36,6 +36,8 @@ DMG pharmacy group's posted-recovery ledger (Jan 2020 → present, ~60 clients, 
 
 Transaction grain (file × recovery date), `IsPostedRecovery = 1`, `GrossRecovery`. Units from team (41/42 SRU, 45 RCU, else LRU). Not "last recovered date on file", so no pull-forward bias.
 
+**Re-verified 2026-09-17 after reviewer feedback** ("count $ as they are recovered, not by file start or end date"): every Subro aggregate in `dashboard/pull_subro.py` groups by `RecoveryDate` of the posted recovery transaction; no file open/close/last-recovered field is used as a grouping key. Stated explicitly on the Notion note under the Subro units table.
+
 ## 2026-09-17 — Claim linkage for COB splits uses RemitPendingClaim, then RemitTransaction
 
 From Jun 2026 a growing share of NULL-division "Completed Recovery" remits (30 % of $ in Jun, 49 % in Aug) have no `RemitPendingClaim` row but do have `RemitTransaction` rows. Category and client splits therefore use `COALESCE(RemitPendingClaim.ClaimID, Transaction.ClaimID via RemitTransaction)`. After this, "(no claim allocation)" drops to ≈ $18 K in Aug 2026. Monthly totals are unaffected (they never needed the claim link). Flag for Josh Roberts: is the June change a process change or a backlog?
