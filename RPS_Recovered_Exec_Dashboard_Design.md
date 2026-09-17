@@ -542,13 +542,15 @@ SELECT 'COB' AS Pillar,
        rt.Name                             AS RecoveryTypeName,  -- Cash / Direct / Retraction / Check / EFT / Card / Adjustment
        rm.Name                             AS RecoveryMethodName
 FROM ACT.dbo.Remit r WITH (NOLOCK)
-OUTER APPLY (SELECT TOP 1 ClaimID FROM ACT.dbo.RemitPendingClaim WITH (NOLOCK) WHERE RemitID = r.ID) rpc
+OUTER APPLY (SELECT TOP 1 ClaimID FROM ACT.dbo.RemitPendingClaim WITH (NOLOCK) WHERE RemitID = r.ID) rp
+OUTER APPLY (SELECT TOP 1 t.ClaimID FROM ACT.dbo.RemitTransaction x WITH (NOLOCK) JOIN ACT.dbo.[Transaction] t WITH (NOLOCK) ON t.ID = x.TransactionID WHERE x.RemitID = r.ID AND rp.ClaimID IS NULL) rx
+CROSS APPLY (SELECT COALESCE(rp.ClaimID, rx.ClaimID) AS ClaimID) rpc   -- since Jun 2026 most remits link via RemitTransaction
 LEFT JOIN ACT.dbo.Claim  c   WITH (NOLOCK) ON c.ID  = rpc.ClaimID
 LEFT JOIN ACT.dbo.Client cl  WITH (NOLOCK) ON cl.ID = c.ClientID
 LEFT JOIN ACT.dbo.COB    cob WITH (NOLOCK) ON cob.ID = c.COBID
 LEFT JOIN ACT.dbo.RecoveryType rt ON rt.ID = r.RecoveryTypeID
 LEFT JOIN ACT.ruin.RecoveryMethod rm ON rm.RecoveryMethodId = r.RecoveryMethodId
-WHERE r.DivisionId = 2                                          -- COB medical per John Marcsik (ACT labels it "Subro")
+WHERE r.DivisionId IS NULL                                      -- medical COB = Payment Integrity book; DivisionId 2 is Subro (submitted stage), see DECISIONS.md
   AND r.AddDate >= @from AND r.AddDate < @to;
 -- Previous skeleton kept for reference (SmartII-side names):
 --     CAST(p.PostedDate AS date)          AS RecoveryDate,

@@ -15,7 +15,7 @@ Companion Notion pages in the same "HLM Dashboard" space: *RPS $ Recovered — D
 |---|---|---|
 | Subrogation | Monthly posted $ done, through Sep 2026 | `SubroReports.rpt.RecoveriesbyLOBTableau` (TRGDMGREP1, Studio project 0010z) |
 | Pharmacy programs | Monthly posted $ done | `DMGMining.dbo.PostedRecoveryTrendingData` (192.168.251.18, Studio project 0012k) |
-| COB (medical) | **Source found, numbers not yet pulled.** ACT discovery (step 1) ran on 2026-09-16 and located the posted-recovery ledger: `ACT.dbo.Remit` (+ `RemitPendingClaim`, `Transaction`). Step 2 SQL is written and waiting to be run — see below. | `ACT.dbo.Remit` on TRGACAP3 (Windows auth works from this laptop with `sqlcmd -S TRGACAP3 -d ACT -E`). Not reachable from Studio. |
+| COB (medical) | **Monthly posted $ done (2026-09-17).** Aug 2026 $8.63M, T12 $124.71M. Source is `ACT.dbo.Remit` with `DivisionId IS NULL` (Payment Integrity book). `DivisionId = 2` turned out to be Subrogation at the submitted stage and is NOT used (see `DECISIONS.md`). | `ACT.dbo.Remit` on TRGACAP3, pulled by `dashboard/pull_cob_act.py` via direct pymssql. |
 
 ## COB: what the ACT discovery found (2026-09-16)
 
@@ -38,25 +38,29 @@ Full output (PHI sample rows redacted) is in `dashboard/sql/act_discovery_output
 
 Things that looked like ledgers but are not: `dbo.Claim.PaidDate` is the *client's* original paid date, not a recovery; `dwAudit.tblInvoiceSummary` and `rpt.HitDetail` returned no rows for the last 24 months; `ClientFee` is a fee-schedule table.
 
-## Next step for whoever picks this up
+## Status 2026-09-17 and next steps
 
-1. Run `dashboard/sql/act_cob_step2_remit_monthly.sql` on TRGACAP3 / `ACT` (SSMS Results-to-Text, or the `sqlcmd` line in the file header). Fast: it only touches `Remit` (2.8 M rows). It gives monthly $ by division (R2), the amount-column semantics (R3: which of `AppliedAmt` / `ARDAmount` / `AuditorAmount` is gross recovered), client codes (R6), `AuditCategory` (R7) and the daily batch shape (R8).
-2. Run `dashboard/sql/act_cob_step2_transaction_monthly.sql` (heavy, 5–20 min). T1–T3 confirm which division is the COB book; T4–T6 reconcile `Remit` to the `Transaction` "Posted" ledger; T7 gives status-history counts.
-3. From R2 (Division 2, `AppliedAmt` unless R3/T6 say otherwise) write the monthly series for the last 12 complete months, trailing-12 and vs-prior-month, and save it as `dashboard/cob_act_monthly.csv`.
-4. Update the Notion note: replace the "COB (Medical) — Source Status" section with the monthly series, fill the COB column of the By Pillar table, and restate "Total Posted Recoveries" as Subro + Pharmacy + COB. Then update the design doc §2.1/§2.2/§2.4 COB rows with the confirmed column names.
+Done: overall RPS total (Aug 2026 $124.43M, +3.9% MoM, T12 $1,350.14M) with stacked chart, COB monthly series, COB by audit category and by client, all on the Notion note. Outputs: `dashboard/cob_act_*.csv`, `dashboard/rps_total_monthly.csv`, `dashboard/exec_chart_cob_*.png`, `dashboard/exec_chart_rps_total_monthly.png`.
 
-**If running from Claude Code:** the auto-mode classifier blocks `sqlcmd` reads of `ACT` dollar data unless the target is named in the prompt or allow-listed. Either say explicitly "run the step 2 SQL against TRGACAP3 / ACT" or add `Bash(sqlcmd -S TRGACAP3 -d ACT -E *)` to `.claude/settings.local.json` permissions. Step 1 (schema discovery) and the metadata read went through; the dollar aggregates did not.
+Open items:
+1. `dashboard/sql/act_cob_step2_transaction_monthly.sql` (ledger cross-check, heavy) was started 2026-09-17 in the background; if `sql/act_cob_step2_transaction_monthly_output.txt` is still 89 bytes it did not finish. Rerun with `python dashboard/run_act_discovery.py dashboard/sql/act_cob_step2_transaction_monthly.sql` off-hours. Its T6 reconciles `Remit.AppliedAmt` to `Transaction` type 6 Posted; note T1-T7 filter on Division 2, which we now know is Subro, so change them to `c.DivisionID = 1` before rerunning.
+2. Confirm with Josh Roberts (DMG) / COB Ops that `Remit.AppliedAmt`, NULL division, is what finance recognises as posted COB recovery, and that the Jun 2026 process change (remits now linked through `RemitTransaction` instead of `RemitPendingClaim`) is expected.
+3. Reconcile the Pharmacy series against Kyle Schmidt's Power BI dashboards.
+4. Design doc §2 COB rows: replace the Division 2 assumption with the NULL-division finding (done in summary rows; draft SQL block still says `DivisionId = 2`).
 
 ## Layout
 
 - `RPS_Recovered_Exec_Dashboard_Design.md` — full design doc (sources, model, pipeline, owners, blockers).
 - `RPS_Dashboard_Real_Data_Visual.md` — mockup narrative with real numbers.
 - `dashboard/` — Studio query helpers (`studio.py` for 0010z lives in `~/subro/thresholding/analysis/`, `studio_cob.py` here for 0012k), probe scripts, pulled CSVs, generated charts (`exec_chart_*.png`), Streamlit app (`app.py`).
+- `DECISIONS.md` — decision log (why NULL-division = COB, why Division 2 is excluded, totals rule).
+- `dashboard/pull_cob_act.py`, `generate_cob_charts.py`, `generate_rps_total_chart.py` — COB pull and the COB / overall charts.
 - `dashboard/sql/` — SQL to run directly on the SQL Servers:
   - `act_cob_discovery.sql` — step 1, schema discovery (done 2026-09-16).
   - `act_cob_step2_metadata.sql` — column definitions, lookups, view definitions (done).
-  - `act_cob_step2_remit_monthly.sql` — step 2b, monthly posted $ from `Remit` (**to run**).
-  - `act_cob_step2_transaction_monthly.sql` — step 2c, ledger cross-check (**to run**).
+  - `act_cob_step2_remit_monthly.sql` — step 2b, monthly posted $ from `Remit` (run 2026-09-17).
+  - `act_cob_step2d_null_division.sql` — step 2d, proves NULL division = COB and Division 2 = Subro (run 2026-09-17).
+  - `act_cob_step2_transaction_monthly.sql` — step 2c, ledger cross-check (started, see open items).
   - `*output*.txt` — query outputs, git-ignored because they can contain PHI.
 - `dashboard/catalog_ranked_*.csv` — column catalogs of CarlQryRun and DMGMining ranked by date/money column counts.
 

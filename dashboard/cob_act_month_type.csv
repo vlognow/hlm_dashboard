@@ -1,0 +1,294 @@
+ym,txn_type,recovery_type,n_remits,applied
+2024-08,Write Off,Check,3,
+2025-05,Completed Recovery,Adjustment,1,
+2026-07,Completed Recovery,Retraction,25,232144.91
+2025-03,Completed Recovery,Direct,113,1302901.08
+2024-11,Completed Recovery,Direct,192,1888023.19
+2025-08,Completed Recovery,Cash,4023,10231344.83
+2024-08,Write Off,Retraction,33,-1359.3
+2025-08,Adj-Client,Retraction,601,-979329.01
+2025-04,Completed Recovery,Direct,160,1695279.28
+2024-10,Completed Recovery,Cash,4255,13369260.65
+2026-06,Completed Recovery,Cash,3645,8947431.76
+2026-07,Completed Recovery,Direct,102,556636.26
+2025-06,Write Off,Cash,5154,0.0
+2024-08,Completed Recovery,Cash,3823,11886995.21
+2024-09,Adj-Provider,Cash,58,-77943.68
+2026-07,Write Off,Adjustment - Net,7,0.0
+2026-08,Write Off,Retraction,3,
+2024-09,Adj-Client,Direct,5,-1182.8
+2025-08,Write Off,Retraction,1,
+2025-04,Adj-Client,Retraction,456,-1014774.01
+2025-09,Write Off,Cash,4713,0.0
+2024-09,Completed Recovery,Retraction,13,18866.02
+2025-04,Adj-Client,Direct,15,-84432.93
+2024-08,Write Off,Cash,4846,-2342.14
+2024-08,Completed Recovery,Adjustment,2,
+2024-06,Write Off,Direct,1,
+2026-06,Adj-Client,Retraction,395,-697151.53
+2025-12,Completed Recovery,Retraction,16,83905.62
+2024-06,Adj-Provider,Cash,48,-90006.73
+2025-05,Completed Recovery,Cash,4451,11504411.11
+2026-08,Completed Recovery,Direct,69,620122.35
+2024-10,Adj-Client,Retraction,523,-936007.57
+2024-12,Write Off,Cash,4605,0.0
+2025-05,Adj-Client,Direct,12,-27684.3
+2026-09,Completed Recovery,Direct,12,47569.98
+2025-09,Completed Recovery,Direct,180,1421621.23
+2026-02,Completed Recovery,Retraction,39,607596.79
+2024-06,Completed Recovery,Direct,260,1753595.39
+2025-03,Adj-Client,Direct,8,-3367.92
+2025-07,Adj-Provider,Cash,80,-66904.79
+2026-02,Adj-Provider,Direct,1,-450.48
+2026-01,Adj-Provider,Retraction,1,
+2025-07,Completed Recovery,Direct,102,730302.41
+2024-09,Write Off,Retraction,8,
+2024-07,Adj-Client,Adjustment,2,
+2025-10,Write Off,Retraction,4,-2837.09
+2026-06,Write Off,Retraction,1,
+2025-02,Completed Recovery,Retraction,9,34347.57
+2026-08,Adj-Client,Direct,10,-19952.72
+2025-02,Adj-Client,Direct,13,-43800.06
+2025-04,Write Off,Retraction,1,
+2026-08,Adj-Provider,Cash,159,-137295.83
+2024-08,Adj-Provider,Retraction,1,
+2025-05,Write Off,Retraction,3,-362.38
+2026-05,Write Off,Retraction,3,
+2026-03,Adj-Client,Direct,22,-39515.28
+2026-05,Adj-Client,Direct,9,-4964.46
+2025-07,Completed Recovery,Retraction,99,136164.32
+2025-12,Adj-Provider,Cash,96,-87331.59
+2026-01,Adj-Client,Cash,2,-1511.1
+2025-12,Write Off,Direct,2,
+2025-02,Write Off,Retraction,4,
+2024-10,Write Off,Retraction,1,
+2026-01,Write Off,Cash,5547,0.0
+2025-05,Write Off,Cash,5394,0.0
+2025-07,Write Off,Cash,5800,0.0
+2024-06,Adj-Provider,Adjustment,1,
+2025-07,Write Off,Retraction,3,
+2026-06,Write Off,Cash,5034,0.0
+2024-07,Completed Recovery,Direct,234,1690470.99
+2026-07,Adj-Client,Retraction,589,-1219670.45
+2025-12,Completed Recovery,Direct,80,456977.87
+2026-05,Adj-Client,Retraction,698,-1814586.3
+2026-03,Adj-Provider,Cash,116,-112037.53
+2025-02,Completed Recovery,Direct,149,676997.74
+2024-09,Write Off,Cash,4257,0.0
+2025-11,Completed Recovery,Direct,92,924166.57
+2025-06,Completed Recovery,Direct,93,837788.17
+2025-01,Adj-Client,Direct,17,-38510.07
+2026-02,Adj-Client,Direct,10,-9930.4
+2024-12,Completed Recovery,Cash,3873,11952638.14
+2025-08,Adj-Provider,Retraction,1,-461.15
+2024-09,Completed Recovery,Direct,290,1505029.35
+2025-02,Completed Recovery,Cash,3862,10893771.29
+2026-03,Write Off,Cash,5527,0.0
+2024-12,Adj-Client,Retraction,375,-500772.98
+2026-02,Completed Recovery,Cash,3504,8971700.71
+2026-02,Write Off,Cash,4836,0.0
+2025-12,Adj-Client,Direct,6,-3675.34
+2025-08,Adj-Provider,Cash,94,-157562.58
+2024-07,Adj-Client,Direct,11,-10246.49
+2025-06,Completed Recovery,Retraction,29,195925.09
+2025-06,Adj-Client,Direct,16,-118963.27
+2025-01,Completed Recovery,Direct,109,575555.22
+2024-06,Completed Recovery,Adjustment,1,
+2026-03,Write Off,Adjustment,1,
+2026-06,Completed Recovery,Retraction,22,384207.22
+2024-06,Write Off,Retraction,9,-7183.65
+2025-04,Completed Recovery,Retraction,2,857.01
+2026-05,Adj-Provider,Retraction,14,-24680.03
+2025-06,Adj-Provider,Cash,59,-69338.28
+2025-06,Adj-Client,Cash,3,-35520.89
+2025-10,Write Off,Cash,4900,0.0
+2025-11,Adj-Client,Direct,4,-6805.36
+2025-07,Adj-Client,Direct,11,-24319.18
+2026-04,Adj-Client,Cash,5,-3581.06
+2025-10,Adj-Client,Cash,3,-7923.93
+2025-10,Completed Recovery,Cash,4512,12592276.22
+2024-10,Adj-Provider,Cash,37,-73894.92
+2024-08,Adj-Client,Cash,1,-11106.57
+2026-07,Adj-Provider,Adjustment,1,
+2024-08,Adj-Client,Retraction,884,-1532287.67
+2024-06,Adj-Client,Direct,19,-10181.23
+2026-04,Write Off,Adjustment,1,
+2026-01,Completed Recovery,Direct,70,578062.63
+2026-03,Completed Recovery,Direct,168,762550.27
+2026-08,Adj-Client,Retraction,465,-1265809.71
+2024-06,Completed Recovery,Retraction,8,13117.89
+2024-06,Adj-Client,Cash,1,-1988.5
+2025-09,Completed Recovery,Retraction,113,3158944.25
+2024-11,Write Off,Direct,1,
+2026-01,Adj-Provider,Cash,65,-33141.64
+2025-01,Adj-Provider,Cash,70,-254966.3
+2025-05,Write Off,Adjustment,1,
+2024-07,Completed Recovery,Retraction,36,39191.27
+2024-06,Write Off,Cash,4039,0.0
+2026-06,Completed Recovery,Adjustment,1,
+2026-07,Completed Recovery,Cash,3784,11191200.87
+2026-04,Completed Recovery,Direct,130,1097307.97
+2024-08,Completed Recovery,Direct,188,1898936.29
+2026-04,Adj-Provider,Adjustment,1,
+2024-08,Adj-Provider,Cash,81,-133495.05
+2024-08,Adj-Provider,Adjustment,1,
+2026-07,Write Off,Direct,1,
+2024-10,Write Off,Cash,5249,0.0
+2025-03,Write Off,Adjustment,1,
+2025-03,Adj-Client,Retraction,587,-801440.68
+2026-03,Adj-Client,Retraction,612,-906771.6
+2025-02,Adj-Client,Retraction,338,-644389.34
+2025-12,Adj-Provider,Direct,1,-866.44
+2024-11,Write Off,Retraction,4,
+2026-02,Adj-Provider,Cash,71,-88813.5
+2026-09,Completed Recovery,Cash,1496,3248458.84
+2026-07,Adj-Client,Direct,8,-7621.63
+2025-11,Write Off,Adjustment,1,
+2025-05,Adj-Client,Cash,2,-1132.31
+2025-02,Completed Recovery,Adjustment,1,
+2026-07,Adj-Provider,Retraction,1,
+2025-04,Adj-Client,Cash,1,-1452.21
+2024-07,Adj-Provider,Cash,50,-55809.86
+2025-07,Adj-Provider,Adjustment,1,
+2026-03,Completed Recovery,Retraction,13,148990.77
+2026-04,Write Off,Retraction,8,
+2026-01,Adj-Client,Retraction,520,-745928.75
+2025-08,Write Off,Cash,4755,0.0
+2025-11,Adj-Client,Retraction,612,-1334135.35
+2026-06,Adj-Provider,Cash,93,-137853.76
+2024-11,Completed Recovery,Retraction,16,5717.24
+2026-08,Completed Recovery,Retraction,36,253707.49
+2025-10,Adj-Provider,Adjustment,2,
+2026-04,Adj-Client,Retraction,570,-1283244.86
+2025-01,Completed Recovery,Retraction,6,105886.63
+2025-07,Completed Recovery,Adjustment,1,
+2024-12,Completed Recovery,Direct,157,932496.16
+2025-07,Adj-Client,Cash,3,-3901.94
+2026-08,Adj-Client,Cash,2,-371.94
+2024-07,Completed Recovery,Cash,4305,11601389.89
+2026-08,Adj-Provider,Retraction,10,-10696.5
+2024-09,Completed Recovery,Cash,3904,12694499.56
+2025-11,Write Off,Direct,1,
+2025-07,Completed Recovery,Cash,4420,11741572.56
+2025-12,Completed Recovery,Cash,4278,11694141.8
+2024-09,Write Off,Adjustment,1,
+2024-11,Adj-Client,Direct,3,-1612.36
+2025-09,Adj-Provider,Cash,68,-54166.3
+2026-04,Completed Recovery,Retraction,13,94849.42
+2025-02,Write Off,Adjustment,2,
+2025-10,Adj-Provider,Cash,97,-86591.9
+2025-01,Write Off,Adjustment,1,
+2025-08,Adj-Client,Cash,1,-506.52
+2024-12,Adj-Provider,Cash,71,-122408.34
+2025-05,Adj-Provider,Cash,118,-78471.42
+2024-08,Write Off,Adjustment - Net,1,
+2026-07,Write Off,Adjustment,2,
+2024-09,Adj-Client,Retraction,491,-794892.63
+2025-01,Adj-Client,Cash,2,-98.83
+2026-07,Completed Recovery,Adjustment,1,
+2026-06,Write Off,Adjustment,6,
+2025-09,Adj-Client,Retraction,678,-1561500.05
+2025-01,Adj-Client,Retraction,547,-1668211.62
+2026-02,Adj-Provider,Adjustment,1,
+2025-03,Adj-Client,Cash,1,-626.9
+2025-04,Completed Recovery,Cash,4258,10855387.52
+2026-06,Completed Recovery,Direct,79,593190.4
+2025-09,Write Off,Retraction,3,-4142.0
+2024-09,Adj-Client,Cash,1,-18.24
+2026-03,Completed Recovery,Cash,4861,12982585.07
+2025-01,Adj-Provider,Retraction,1,
+2026-05,Write Off,Cash,5996,5462.52
+2025-10,Adj-Provider,Retraction,5,-1783.99
+2024-11,Adj-Client,Retraction,507,-1084852.21
+2024-09,Completed Recovery,Adjustment,1,
+2025-11,Write Off,Cash,3958,-812.29
+2025-01,Write Off,Cash,5466,0.0
+2026-07,Adj-Client,Cash,1,-330.68
+2025-10,Adj-Client,Retraction,796,-1535293.16
+2025-10,Adj-Client,Direct,7,-9001.13
+2024-10,Completed Recovery,Direct,221,2168617.94
+2026-09,Completed Recovery,Retraction,1,7820.0
+2026-04,Adj-Client,Direct,16,-7604.63
+2026-01,Completed Recovery,Cash,2896,8894728.62
+2026-03,Write Off,Direct,1,
+2024-07,Adj-Client,Retraction,766,-1296146.03
+2024-11,Completed Recovery,Card,1,310.97
+2025-03,Write Off,Cash,5578,0.0
+2025-09,Adj-Client,Direct,14,-12941.66
+2025-12,Write Off,Cash,4797,0.0
+2025-06,Adj-Client,Retraction,454,-1103361.25
+2025-11,Adj-Provider,Retraction,3,-35147.79
+2025-12,Write Off,Adjustment,3,
+2026-09,Write Off,Retraction,2,
+2024-06,Adj-Provider,Retraction,1,
+2025-05,Completed Recovery,Retraction,13,39053.36
+2025-03,Completed Recovery,Cash,4722,14591625.54
+2025-10,Completed Recovery,Direct,87,467973.49
+2025-11,Completed Recovery,Cash,3763,10845855.23
+2025-06,Completed Recovery,Cash,4212,12043960.12
+2025-01,Completed Recovery,Adjustment,1,
+2024-10,Completed Recovery,Check,1,
+2024-11,Completed Recovery,Cash,3665,10813508.45
+2026-05,Adj-Provider,Cash,71,-85704.08
+2026-05,Completed Recovery,Direct,100,522878.3
+2026-08,Write Off,Cash,5192,0.0
+2026-05,Completed Recovery,Retraction,20,23258.01
+2026-04,Completed Recovery,Cash,3944,9541266.38
+2025-05,Completed Recovery,Direct,125,766678.41
+2025-09,Completed Recovery,Cash,4684,14256034.94
+2024-07,Write Off,Retraction,34,
+2025-08,Completed Recovery,Direct,91,520295.88
+2025-08,Completed Recovery,Retraction,18,24365.47
+2024-08,Adj-Provider,Direct,1,-148.0
+2024-07,Write Off,Cash,4318,0.0
+2026-07,Adj-Provider,Cash,147,-133333.51
+2026-06,Adj-Client,Direct,16,-11314.65
+2025-11,Adj-Provider,Cash,72,-114359.31
+2026-04,Write Off,Cash,5511,0.0
+2025-03,Adj-Provider,Cash,100,-65109.87
+2026-02,Adj-Client,Retraction,447,-831319.25
+2024-11,Adj-Provider,Cash,52,-65966.45
+2026-04,Adj-Provider,Cash,97,-121359.72
+2025-12,Write Off,Retraction,2,
+2025-05,Adj-Client,Retraction,542,-903974.45
+2025-10,Adj-Provider,Direct,1,-11.42
+2026-07,Write Off,Cash,5593,483.09
+2026-02,Completed Recovery,Direct,95,693228.25
+2024-12,Completed Recovery,Retraction,11,10857.48
+2026-01,Completed Recovery,Retraction,3,-394.97
+2024-10,Completed Recovery,Retraction,8,13182.66
+2026-03,Write Off,Retraction,4,
+2024-11,Write Off,Cash,4886,0.0
+2025-02,Write Off,Cash,5122,0.0
+2025-11,Adj-Client,Cash,4,-4648.21
+2024-06,Write Off,Adjustment,1,
+2025-04,Adj-Provider,Cash,29,-56583.84
+2025-10,Write Off,Adjustment,3,
+2025-01,Adj-Provider,Adjustment,2,
+2025-03,Completed Recovery,Retraction,74,3162379.67
+2025-11,Completed Recovery,Retraction,9,7876.86
+2024-08,Write Off,Adjustment,3,
+2026-05,Completed Recovery,Cash,3935,8322259.08
+2024-06,Adj-Client,Retraction,561,-1081986.97
+2026-08,Completed Recovery,Cash,3784,9191528.28
+2025-01,Completed Recovery,Cash,3470,9895321.41
+2026-01,Adj-Client,Direct,8,-3911.53
+2025-08,Adj-Client,Adjustment,2,-24398.3
+2026-09,Write Off,Cash,2708,0.0
+2024-10,Adj-Client,Direct,10,-7330.91
+2025-02,Adj-Provider,Cash,62,-40464.61
+2025-08,Adj-Client,Direct,11,-41248.45
+2026-03,Adj-Provider,Retraction,6,-2555.83
+2024-07,Adj-Client,Cash,1,-484.96
+2026-08,Adj-Provider,Direct,2,-2127.19
+2025-12,Adj-Provider,Retraction,1,-467.2
+2025-04,Write Off,Cash,6976,0.0
+2024-06,Completed Recovery,Cash,3865,12680320.55
+2025-07,Adj-Client,Retraction,525,-1444615.03
+2025-12,Adj-Client,Retraction,710,-1860535.21
+2024-08,Completed Recovery,Retraction,48,20792.33
+2025-10,Completed Recovery,Retraction,20,75607.94
+2025-01,Adj-Provider,Direct,1,-469.29
+2024-08,Adj-Client,Direct,26,-68079.76
+2024-12,Adj-Client,Direct,20,-65249.66
+2025-06,Write Off,Retraction,29,
