@@ -1,0 +1,257 @@
+Breakout,Month,ProgramBreakout,Quarter,Recovered,Year
+Commercial Fully Insured,1,COB,1,295965.06,2024
+Commercial Fully Insured,1,Retro Term,1,245409.89,2024
+Commercial Self Insured,1,COB,1,913684.1,2024
+Commercial Self Insured,1,Retro Term,1,304837.5,2024
+Coventry,1,COB,1,6172.36,2024
+Medicare (HMO),1,COB,1,116311.42,2024
+Medicare (HRP),1,COB,1,1070024.29,2024
+Student Health,1,Retro Term,1,2165.1,2024
+Commercial Fully Insured,2,COB,1,151088.35,2024
+Commercial Fully Insured,2,Retro Term,1,166840.41,2024
+Commercial Self Insured,2,COB,1,337736.49,2024
+Commercial Self Insured,2,Retro Term,1,364103.21,2024
+Medicare (HMO),2,COB,1,64524.6,2024
+Medicare (HRP),2,COB,1,677085.82,2024
+Student Health,2,Retro Term,1,354.09,2024
+Commercial Fully Insured,3,COB,1,255755.76,2024
+Commercial Fully Insured,3,Retro Term,1,411587.59,2024
+Commercial Self Insured,3,COB,1,512691.65,2024
+Commercial Self Insured,3,Retro Term,1,462448.85,2024
+Medicare (HMO),3,COB,1,162015.7,2024
+Medicare (HRP),3,COB,1,762867.33,2024
+RESEARCH,3,Retro Term,1,190.81,2024
+Student Health,3,Retro Term,1,2897.58,2024
+Commercial Fully Insured,4,COB,2,279843.94,2024
+Commercial Fully Insured,4,Retro Term,2,340214.94,2024
+Commercial Self Insured,4,COB,2,318490.36,2024
+Commercial Self Insured,4,Retro Term,2,395170.68,2024
+Coventry,4,COB,2,13404.12,2024
+Medicare (HMO),4,COB,2,78545.63,2024
+Medicare (HRP),4,COB,2,1055983.26,2024
+RESEARCH,4,Retro Term,2,198.95,2024
+Student Health,4,Retro Term,2,8388.46,2024
+Commercial Fully Insured,5,COB,2,129160.27,2024
+Commercial Fully Insured,5,Retro Term,2,375941.9,2024
+Commercial Self Insured,5,COB,2,481091.03,2024
+Commercial Self Insured,5,Retro Term,2,338318.19,2024
+Coventry,5,COB,2,4438.32,2024
+Medicare (HMO),5,COB,2,52936.29,2024
+Medicare (HRP),5,COB,2,775417.15,2024
+RESEARCH,5,Retro Term,2,129.45,2024
+Student Health,5,Retro Term,2,3688.76,2024
+Commercial Fully Insured,6,COB,2,177204.86,2024
+Commercial Fully Insured,6,Retro Term,2,186053.05,2024
+Commercial Self Insured,6,COB,2,295687.35,2024
+Commercial Self Insured,6,Retro Term,2,470068.53,2024
+Medicare (HMO),6,COB,2,207861.67,2024
+Medicare (HRP),6,COB,2,1072462.27,2024
+Student Health,6,Retro Term,2,9254.08,2024
+Commercial Fully Insured,7,COB,3,276189.71,2024
+Commercial Fully Insured,7,Retro Term,3,325017.02,2024
+Commercial Self Insured,7,COB,3,725058.44,2024
+Commercial Self Insured,7,Retro Term,3,513558.61,2024
+Medicare (HMO),7,COB,3,141583.34,2024
+Medicare (HRP),7,COB,3,1109883.46,2024
+RESEARCH,7,Retro Term,3,31.18,2024
+Student Health,7,Retro Term,3,3735.67,2024
+Commercial Fully Insured,8,COB,3,538197.24,2024
+Commercial Fully Insured,8,Retro Term,3,605721.88,2024
+Commercial Self Insured,8,COB,3,615271.72,2024
+Commercial Self Insured,8,Retro Term,3,614280.98,2024
+Medicare (HMO),8,COB,3,19052.2,2024
+Medicare (HRP),8,COB,3,1186415.21,2024
+RESEARCH,8,Retro Term,3,521.11,2024
+Student Health,8,Retro Term,3,4069.62,2024
+Commercial Fully Insured,9,COB,3,278321.49,2024
+Commercial Fully Insured,9,Retro Term,3,475859.05,2024
+Commercial Self Insured,9,COB,3,714137.07,2024
+Commercial Self Insured,9,Retro Term,3,341254.31,2024
+Medicare (HMO),9,COB,3,18573.91,2024
+Medicare (HRP),9,COB,3,593337.55,2024
+RESEARCH,9,Retro Term,3,625.82,2024
+Student Health,9,Retro Term,3,1357.27,2024
+Commercial Fully Insured,10,COB,4,106680.99,2024
+Commercial Fully Insured,10,Retro Term,4,181677.4,2024
+Commercial Self Insured,10,COB,4,255217.15,2024
+Commercial Self Insured,10,Retro Term,4,244461.85,2024
+Medicare (HMO),10,COB,4,34412.46,2024
+Medicare (HRP),10,COB,4,1128279.49,2024
+RESEARCH,10,Retro Term,4,1210.26,2024
+Student Health,10,Retro Term,4,1167.3,2024
+Commercial Fully Insured,11,COB,4,101864.01,2024
+Commercial Fully Insured,11,Retro Term,4,179175.66,2024
+Commercial Self Insured,11,COB,4,152537.41,2024
+Commercial Self Insured,11,Retro Term,4,327838.61,2024
+Medicare (HMO),11,COB,4,22134.64,2024
+Medicare (HRP),11,COB,4,783278.47,2024
+RESEARCH,11,Retro Term,4,1061.96,2024
+Student Health,11,Retro Term,4,942.16,2024
+Commercial Fully Insured,12,COB,4,-157613.73,2024
+Commercial Fully Insured,12,Retro Term,4,283479.53,2024
+Commercial Self Insured,12,COB,4,485581.97,2024
+Commercial Self Insured,12,Retro Term,4,295009.56,2024
+Medicare (HMO),12,COB,4,51522.98,2024
+Medicare (HRP),12,COB,4,639601.16,2024
+Student Health,12,Retro Term,4,-1084.43,2024
+Commercial Fully Insured,1,COB,1,271215.96,2025
+Commercial Fully Insured,1,Retro Term,1,258600.74,2025
+Commercial Self Insured,1,COB,1,657259.55,2025
+Commercial Self Insured,1,Retro Term,1,321680.57,2025
+Medicare (HMO),1,COB,1,6.28,2025
+Medicare (HRP),1,COB,1,361899.46,2025
+RESEARCH,1,Retro Term,1,599.33,2025
+Student Health,1,Retro Term,1,313.54,2025
+Commercial Fully Insured,2,COB,1,219352.92,2025
+Commercial Fully Insured,2,Retro Term,1,217719.59,2025
+Commercial Self Insured,2,COB,1,432943.72,2025
+Commercial Self Insured,2,Retro Term,1,322872.78,2025
+Medicare (HMO),2,COB,1,4262.93,2025
+Medicare (HRP),2,COB,1,1055846.03,2025
+RESEARCH,2,Retro Term,1,235.44,2025
+Commercial Fully Insured,3,COB,1,678763.92,2025
+Commercial Fully Insured,3,Retro Term,1,624538.68,2025
+Commercial Self Insured,3,COB,1,942436.86,2025
+Commercial Self Insured,3,Retro Term,1,532494.56,2025
+Coventry,3,COB,1,5843.39,2025
+Medicare (HMO),3,COB,1,3279.25,2025
+Medicare (HRP),3,COB,1,1522962.29,2025
+RESEARCH,3,Retro Term,1,329.4,2025
+Student Health,3,Retro Term,1,7030.88,2025
+Commercial Fully Insured,4,COB,2,819707.54,2025
+Commercial Fully Insured,4,Retro Term,2,416600.61,2025
+Commercial Self Insured,4,COB,2,1381070.03,2025
+Commercial Self Insured,4,Retro Term,2,479622.13,2025
+Medicare (HMO),4,COB,2,554.11,2025
+Medicare (HRP),4,COB,2,1273728.64,2025
+RESEARCH,4,Retro Term,2,2993.62,2025
+Student Health,4,Retro Term,2,4944.68,2025
+Commercial Fully Insured,5,COB,2,290750.57,2025
+Commercial Fully Insured,5,Retro Term,2,270586.44,2025
+Commercial Self Insured,5,COB,2,472387.53,2025
+Commercial Self Insured,5,Retro Term,2,442440.8,2025
+Medicare (HMO),5,COB,2,19620.23,2025
+Medicare (HRP),5,COB,2,1001662.89,2025
+RESEARCH,5,Retro Term,2,132.84,2025
+Student Health,5,Retro Term,2,5412.03,2025
+Commercial Fully Insured,6,COB,2,142084.02,2025
+Commercial Fully Insured,6,Retro Term,2,262961.93,2025
+Commercial Self Insured,6,COB,2,588445.18,2025
+Commercial Self Insured,6,Retro Term,2,238580.59,2025
+Medicare (HMO),6,COB,2,11932.19,2025
+Medicare (HRP),6,COB,2,1170985.49,2025
+Student Health,6,Retro Term,2,5335.76,2025
+Commercial Fully Insured,7,COB,3,221119.39,2025
+Commercial Fully Insured,7,Retro Term,3,243226.91,2025
+Commercial Self Insured,7,COB,3,988252.0,2025
+Commercial Self Insured,7,Retro Term,3,260681.71,2025
+Medicare (HMO),7,COB,3,8180.48,2025
+Medicare (HRP),7,COB,3,1331307.22,2025
+RESEARCH,7,Retro Term,3,128.16,2025
+Student Health,7,Retro Term,3,25306.9,2025
+Commercial Fully Insured,8,COB,3,169935.06,2025
+Commercial Fully Insured,8,Retro Term,3,180040.39,2025
+Commercial Self Insured,8,COB,3,837979.03,2025
+Commercial Self Insured,8,Retro Term,3,315583.31,2025
+Medicare (HMO),8,COB,3,23493.13,2025
+Medicare (HRP),8,COB,3,941870.46,2025
+Student Health,8,Retro Term,3,4484.64,2025
+Commercial Fully Insured,9,COB,3,450631.96,2025
+Commercial Fully Insured,9,Retro Term,3,299081.6,2025
+Commercial Self Insured,9,COB,3,599641.51,2025
+Commercial Self Insured,9,Retro Term,3,243870.68,2025
+Medicare (HRP),9,COB,3,1282666.63,2025
+Student Health,9,Retro Term,3,1039.22,2025
+Commercial Fully Insured,10,COB,4,417250.23,2025
+Commercial Fully Insured,10,Retro Term,4,271440.37,2025
+Commercial Self Insured,10,COB,4,557589.04,2025
+Commercial Self Insured,10,Retro Term,4,275050.06,2025
+Medicare (HMO),10,COB,4,13905.8,2025
+Medicare (HRP),10,COB,4,1094282.03,2025
+RESEARCH,10,Retro Term,4,329.71,2025
+Student Health,10,Retro Term,4,328.82,2025
+Commercial Fully Insured,11,COB,4,83162.86,2025
+Commercial Fully Insured,11,Retro Term,4,93634.55,2025
+Commercial Self Insured,11,COB,4,331439.94,2025
+Commercial Self Insured,11,Retro Term,4,295434.94,2025
+Coventry,11,COB,4,9909.74,2025
+Medicare (HMO),11,COB,4,-22935.48,2025
+Medicare (HRP),11,COB,4,881439.85,2025
+RESEARCH,11,Retro Term,4,329.47,2025
+Student Health,11,Retro Term,4,562.41,2025
+Commercial Fully Insured,12,COB,4,244046.36,2025
+Commercial Fully Insured,12,Retro Term,4,190155.47,2025
+Commercial Self Insured,12,COB,4,425529.97,2025
+Commercial Self Insured,12,Retro Term,4,338492.34,2025
+Medicare (HMO),12,COB,4,6634.07,2025
+Medicare (HRP),12,COB,4,1073843.05,2025
+RESEARCH,12,Retro Term,4,1381.42,2025
+Student Health,12,Retro Term,4,528.18,2025
+Commercial Fully Insured,1,COB,1,153220.43,2026
+Commercial Fully Insured,1,Retro Term,1,142869.37,2026
+Commercial Self Insured,1,COB,1,319137.82,2026
+Commercial Self Insured,1,Retro Term,1,164626.54,2026
+Medicare (HMO),1,COB,1,8792.36,2026
+Medicare (HRP),1,COB,1,1356309.75,2026
+Student Health,1,Retro Term,1,138.82,2026
+Commercial Fully Insured,2,COB,1,185782.94,2026
+Commercial Fully Insured,2,Retro Term,1,269100.72,2026
+Commercial Self Insured,2,COB,1,787973.28,2026
+Commercial Self Insured,2,Retro Term,1,296692.18,2026
+Medicare (HRP),2,COB,1,1582876.28,2026
+RESEARCH,2,Retro Term,1,4431.28,2026
+Student Health,2,Retro Term,1,916.19,2026
+Commercial Fully Insured,3,COB,1,403453.65,2026
+Commercial Fully Insured,3,Retro Term,1,282000.1,2026
+Commercial Self Insured,3,COB,1,1024567.59,2026
+Commercial Self Insured,3,Retro Term,1,257741.24,2026
+Medicare (HMO),3,COB,1,13665.13,2026
+Medicare (HRP),3,COB,1,2034100.1,2026
+RESEARCH,3,Retro Term,1,562.08,2026
+Student Health,3,Retro Term,1,5871.65,2026
+Commercial Fully Insured,4,COB,2,361661.28,2026
+Commercial Fully Insured,4,Retro Term,2,235953.28,2026
+Commercial Self Insured,4,COB,2,615401.28,2026
+Commercial Self Insured,4,Retro Term,2,401452.11,2026
+Medicare (HMO),4,COB,2,6564.5,2026
+Medicare (HRP),4,COB,2,943542.17,2026
+RESEARCH,4,Retro Term,2,73.36,2026
+Student Health,4,Retro Term,2,13032.48,2026
+Commercial Fully Insured,5,COB,2,225419.29,2026
+Commercial Fully Insured,5,Retro Term,2,173609.81,2026
+Commercial Self Insured,5,COB,2,584037.95,2026
+Commercial Self Insured,5,Retro Term,2,306300.33,2026
+Medicare (HMO),5,COB,2,225.95,2026
+Medicare (HRP),5,COB,2,906315.58,2026
+RESEARCH,5,Retro Term,2,1944.47,2026
+Student Health,5,Retro Term,2,12035.86,2026
+Commercial Fully Insured,6,COB,2,376779.68,2026
+Commercial Fully Insured,6,Retro Term,2,311149.91,2026
+Commercial Self Insured,6,COB,2,977890.46,2026
+Commercial Self Insured,6,Retro Term,2,347122.83,2026
+Medicare (HMO),6,COB,2,20576.52,2026
+Medicare (HRP),6,COB,2,1324069.27,2026
+RESEARCH,6,Retro Term,2,1928.02,2026
+Student Health,6,Retro Term,2,9287.87,2026
+Commercial Fully Insured,7,COB,3,200559.58,2026
+Commercial Fully Insured,7,Retro Term,3,184518.83,2026
+Commercial Self Insured,7,COB,3,462472.08,2026
+Commercial Self Insured,7,Retro Term,3,322465.44,2026
+Medicare (HRP),7,COB,3,1101343.87,2026
+RESEARCH,7,Retro Term,3,657.0,2026
+Student Health,7,Retro Term,3,18882.43,2026
+Commercial Fully Insured,8,COB,3,186557.78,2026
+Commercial Fully Insured,8,Retro Term,3,241567.18,2026
+Commercial Self Insured,8,COB,3,497235.7,2026
+Commercial Self Insured,8,Retro Term,3,390683.33,2026
+Medicare (HMO),8,COB,3,0.48,2026
+Medicare (HRP),8,COB,3,691402.95,2026
+RESEARCH,8,Retro Term,3,346.45,2026
+Student Health,8,Retro Term,3,46419.78,2026
+Commercial Fully Insured,9,COB,3,84680.27,2026
+Commercial Fully Insured,9,Retro Term,3,107842.24,2026
+Commercial Self Insured,9,COB,3,177823.14,2026
+Commercial Self Insured,9,Retro Term,3,393086.72,2026
+Medicare (HRP),9,COB,3,175364.2,2026
+RESEARCH,9,Retro Term,3,27718.8,2026
+Student Health,9,Retro Term,3,5052.76,2026

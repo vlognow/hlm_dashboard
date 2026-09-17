@@ -1,0 +1,9 @@
+>> CenteneRetraction overall (1s) rows=1
+   [{"n_rows": 3089, "n_recovery_filled": 0, "n_check_filled": 0, "sum_recovery": null, "sum_mining_line_amt": 850224.56, "n_claims": 1041, "n_invoices": 538, "min_letter": 1647561600, "max_letter": 1670457600, "min_pay": 1632873600, "max_pay": 1665100800}]
+>> CenteneRetraction by letter month (1s) rows=10
+   [{"ym": "2022-03", "n_lines": 2, "n_invoices": 1, "line_amt": 1324.14, "recovery_amt": null}, {"ym": "2022-04", "n_lines": 6, "n_invoices": 2, "line_amt": 1336.54, "recovery_amt": null}, {"ym": "2022-05", "n_lines": 35, "n_invoices": 2, "line_amt": 4628.36, "recovery_amt": null}, {"ym": "2022-06", "n_lines": 103, "n_invoices": 11, "line_amt": 32182.53, "recovery_amt": null}, {"ym": "2022-07", "n_lines": 166, "n_invoices": 29, "line_amt": 41024.13, "recovery_amt": null}, {"ym": "2022-08", "n_lines": 190, "n_invoices": 28, "line_amt": 197429.81, "recovery_amt": null}, {"ym": "2022-09", "n_lines": 976, "n_invoices": 114, "line_amt": 165347.37, "recovery_amt": null}, {"ym": "2022-10", "n_lines": 1520, "n_invoices": 327, "line_amt": 313189.19, "recovery_amt": null}, {"ym": "2022-11", "n_lines": 87, "n_invoices": 23, "line_amt": 93400.24, "recovery_amt": null}, {"ym": "2022-12", "n_lines": 4, "n_invoices": 1, "line_amt": 362.25, "recovery_amt": null}]
+>> CenteneRetraction distinct Recovery or Direct Pay values (32s) rows=1
+   [{"v": " ", "n": 3089}]
+>> CenteneRetraction by program (1s) rows=6
+   [{"prog": "COBC", "bu": "Medicaid", "n": 2826, "amt": 676324.31}, {"prog": "COBM", "bu": "Marketplace", "n": 202, "amt": 146656.77}, {"prog": "COBC", "bu": "Marketplace", "n": 28, "amt": 13572.84}, {"prog": "COBC", "bu": "Medicare", "n": 13, "amt": 6978.9}, {"prog": "OVRP", "bu": "Commercial/Other", "n": 10, "amt": 5286.95}, {"prog": "COBM", "bu": "Medicaid", "n": 10, "amt": 1404.79}]
+DONE

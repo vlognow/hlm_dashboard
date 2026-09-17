@@ -1,0 +1,3 @@
+>> name search CTPA/TotalPay (1s) rows=3 cols=['TABLE_SCHEMA', 'TABLE_NAME']
+   [{"TABLE_SCHEMA": "dbo", "TABLE_NAME": "qryGroupAetnaRCEDistinctPatients"}, {"TABLE_SCHEMA": "dbo", "TABLE_NAME": "qryGroupAetnasubroDistinctPatients"}, {"TABLE_SCHEMA": "dbo", "TABLE_NAME": "qryGroupCignaProClaimsDistinctPatients"}]
+DONE

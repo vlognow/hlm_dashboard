@@ -1,0 +1,3 @@
+>> InvestigationInvoices total (1s) rows=1
+   [{"n": 771151, "total": 1651543801.92, "avg": 2141.66071485, "n_positive": 273926, "total_positive": 1651556503.28}]
+DONE

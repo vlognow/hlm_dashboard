@@ -1,0 +1,11 @@
+TITLE: Roberts - Elevance Review 20260909
+ID: C3vm80
+DESC: None
+COLS: ['LeftPayerName', 'RightPayerName', 'TotalOverlaps']
+N ROWS: 10
+SAMPLE ROWS: [["BCBSFL", "ANTHEM", 29666], ["ANTHEM", "MEDICARE", 2], ["EVERNORTH", "ANTHEM", 78642], ["SIHO", "ANTHEM", 2513], ["CAPROCK", "ANTHEM", 278]]
+QUERY: {'type': 'customSqlRequest', 'async': True, 'priority': 1, 'customsql': "Select LeftPayerName, RightPayerName, Count(1) TotalOverlaps\nfrom `Identified Overlaps Export 20260831191326 With Scores` \nWhere (LeftPayerName = 'ANTHEM' AND LeftPolicyInternalReferences ilike '%ELEVANCE%')\nor (RightPayerName = 'ANTHEM' AND RightPolicyInternalReferences ilike '%ELEVANCE%')\nGroup by 1,2"}
+---full dict keys---
+['_project', '_session', '_parent', 'id', 'title', 'type', 'version', 'snapshot', 'sequenceNumber', 'publicationLevel', 'publicationDate', 'baseChartId', 'creatorId', 'projectId', 'creationTime', 'lastModifiedTime', 'status', 'collections', 'permissions', 'query', 'view']
+=====
+DONE

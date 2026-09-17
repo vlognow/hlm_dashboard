@@ -1,0 +1,175 @@
+rows=173 (1s)
+AetnaRxCompliance.ClaimRootRollups (5): ClaimRoot, RootQuantity, RootDaysSupply, RootTotalAmountPaid, RootPatientPayAmount
+AetnaRxCompliance.Claims (124): LineKey, TapeID, ClaimKey, PatientKey, SubscriberKey, GroupKey, DateFilled, RxNumber, NDC, Pharmacy_NCPDPID, Pharmacy_NPI, PharmacyKey, Quantity, FillNumber, NewOrRefill, DaysSupply, CompoundCode, DateWritten, DispenseAs
+AetnaRxCompliance.ClaimsFinal (26): EligMemberKey, EmployerName, PRM_PartDContractNumber, RXP_PartDContractNumber, PRM_COBCSerial, matchingCOBCSerial, InvestigationId, OrgPRM_RxIDNumber, PRM_RxIDNumber, RXP_RxIDNumber, OrgPRM_RxBINNumber, PRM_RxBINNumber, 
+AetnaRxCompliance.ClaimsPreFinal (81): PatientKey, ClaimRoot, ClaimKey, PBMClaimNumber, DateFilled, TotalAmountPaid, DaysSupply, Quantity, PatientPayAmount, PartDContractNumber, RxNumber, FillNumber, NDC, Pharmacy_NPI, Pharmacy_NCPDPID, HIC, SSN, DateOfBirth,
+AetnaRxCompliance.Claims_backup (124): LineKey, TapeID, ClaimKey, PatientKey, SubscriberKey, GroupKey, DateFilled, RxNumber, NDC, Pharmacy_NCPDPID, Pharmacy_NPI, PharmacyKey, Quantity, FillNumber, NewOrRefill, DaysSupply, CompoundCode, DateWritten, DispenseAs
+AetnaRxCompliance.DTLs (8): COBC_Serial, ContractNumber, HIC, DTLPatientKey, EligMemberKey, EligEffectiveDate, EligTerminationDate, TapeID
+AetnaRxCompliance.EligTapeLineKeyIds (2): LineKeyID, TapeID
+AetnaRxCompliance.EligibilityData (7): TapeId, LineKeyId, MemberKey, EffectiveDate, TerminationDate, MemberHICN, PartDContractNumber
+AetnaRxCompliance.PRMs (89): LineKeyID, TapeID, RecordType, HIC, SSN, DateOfBirth, GenderCode, RxIDNumber, RxGroupNumber, RxBINNumber, RxPCNNumber, RxPlanTollFreeNumber, SequenceNumber, COBSourceCode, MSPReason, CoverageCode, InsurerName, InsurerAdd
+Audits.CignaHospiceAudit03062026 (101): Audit_Record_Number, DATE_OF_SERVICE, DATE_EFFECTIVE, DATE_IDR_PROCESSED, CLM_ADJST_TYPE_CD, PDE_CLAIM_CONTROL_NO, PDE_CLAIM_UNIQUE_ID, PDE_CLAIM_TYPE_CODE, PDE_CPP_AMT, PDE_NCPP_AMT, PDE_PATIENT_PAID_AMT, PDE_LICS_AMT, 
+Audits.CignaHospiceAudit03062026_AllClaims (153): AuditTotalPaidAmount, PDE_CLAIM_CONTROL_NO, LineKeyID, TapeID, PatientKey, SubscriberKey, GroupKey, DateFilled, RxNumber, NDC, Pharmacy_NCPDPID, Pharmacy_NPI, PharmacyKey, Quantity, FillNumber, NewOrRefill, DaysSupply, C
+Audits.CignaHospiceAudit03062026_AllClaims_NoDupes (158): DRUG_NDC, DATE_OF_SERVICE, BENEFICIARY_BIRTH_DATE, PDE_CARDHOLDER_ID, TotalPaidAmount, PDE_CLAIM_CONTROL_NO, LineKeyID, TapeID, PatientKey, SubscriberKey, GroupKey, DateFilled, RxNumber, NDC, Pharmacy_NCPDPID, Pharmacy_N
+Audits.CignaHospiceAudit03062026_BestChosenLine (9): ClaimKey, DateFilled, ClaimRootTotalPatientPaidAmount, ClaimRootTotalAmountPaid, PBMClaimNumber, LineTotalAmountPaid, ClaimLineCount, ClaimRoot, PDE_CLAIM_CONTROL_NO
+Audits.CignaHospiceAudit03062026_PBMClaimNumberMatches (152): LineKeyID, TapeID, PatientKey, SubscriberKey, GroupKey, DateFilled, RxNumber, NDC, Pharmacy_NCPDPID, Pharmacy_NPI, PharmacyKey, Quantity, FillNumber, NewOrRefill, DaysSupply, CompoundCode, DateWritten, DispenseAsWritten,
+Audits.CignaHospiceAudit03062026_PeopleDetails (8): DRUG_NDC, DATE_OF_SERVICE, BENEFICIARY_BIRTH_DATE, PDE_CARDHOLDER_ID, AuditTotalPaidAmount, Pharmacy_NPI, PDE_CLAIM_CONTROL_NO, PDE_PATIENT_PAID_AMT
+Audits.CignaHospiceAudit03062026_PeopleKeys (1): PatientKey
+Audits.CignaHospiceAudit04082026 (116): Proper_Improper_Determination, Proper_Improper_Rationale, Audit_Record_Number, DATE_OF_SERVICE, DATE_EFFECTIVE, DATE_IDR_PROCESSED, CLM_ADJST_TYPE_CD, PDE_CLAIM_CONTROL_NO, Unnamed:_8, PDE_CLAIM_UNIQUE_ID, PDE_CLAIM_TYPE
+CenteneRetro.AddBlockingFields (31): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.CCPMEMBH20250928_full (43): Member_Nbr, MemberID_01, LastName, FirstName, MiddleName, Sex, BirthDate, MemberID_02, Filler01, Address_1, City, State, Zip, EffectiveDate, TerminationDate, Filler02, Emplstat, DivisionNbr, BusinessUnit, LR_Response, Al
+CenteneRetro.CenteneEligLoadLog (5): ID, LoadStart, FileName, RecordCount, CompletionDateTime
+CenteneRetro.CenteneRxRetroTermValidationFile (25): MemberKey, SubscriberKey, TrcMemberID, MemberID, FirstName, LastName, MemberDOB, AlternateId1, AlternateId2, PlanName, PlanState, SSN, LOB, TerminationDate, FirstClaim, LastClaim, Dollars, DaysToClaim, MatchDate, Term Da
+CenteneRetro.CenteneRxRetroTermValidationFile_SAMPLE (25): MemberKey, SubscriberKey, TrcMemberID, MemberID, FirstName, LastName, MemberDOB, AlternateId1, AlternateId2, PlanName, PlanState, SSN, LOB, TerminationDate, FirstClaim, LastClaim, Dollars, DaysToClaim, MatchDate, Term Da
+CenteneRetro.ClaimSoundexMemberKeys (6): SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, DateFilled, ClaimTapeId, ClaimLineKeyId
+CenteneRetro.ClaimSoundexMemberKeys_Research (6): SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, DateFilled, ClaimTapeId, ClaimLineKeyId
+CenteneRetro.ClaimTapeLine (5): ClaimTapeId, ClaimLineKeyID, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.Claims (21): Id, PatientKey, ClaimSubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, ClaimRoot, ClaimKey, TotalAmountPaid, DateFilled, OtherCoverageCode, Pharmacy_NPI, Pharmacy_NCPDPID, Quantity, DaysSupply, Date
+CenteneRetro.ClaimsWithNearestEligibility (27): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.ClaimsWithNearestEligibility_Backup (27): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.Claims_backup (21): Id, PatientKey, ClaimSubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, ClaimRoot, ClaimKey, TotalAmountPaid, DateFilled, OtherCoverageCode, Pharmacy_NPI, Pharmacy_NCPDPID, Quantity, DaysSupply, Date
+CenteneRetro.FullEligForMining (26): FileName, LineKeyID, Member_Nbr, MemberID_01, MemberID_02, Alternate_Subscriber_Id, Medicare_Member_Identification_Number, MemberKey1, MemberKey2, MemberKey3, SubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexM
+CenteneRetro.FullEligMemberKeys (13): MemberKey, SoundexMemberKey, FileName, LineKeyID, EffectiveDate, TerminationDate, SubscriberKey, SSN, MemberID, FirstName, LastName, BirthDate, DivisionNbr
+CenteneRetro.HNT_XAMEMMD20250905_full (43): Member_Nbr, MemberID_01, LastName, FirstName, MiddleName, Sex, BirthDate, MemberID_02, Filler01, Address_1, City, State, Zip, EffectiveDate, TerminationDate, Filler02, Emplstat, DivisionNbr, BusinessUnit, LR_Response, Al
+CenteneRetro.HNT_XBMEMMD20250905_full (43): Member_Nbr, MemberID_01, LastName, FirstName, MiddleName, Sex, BirthDate, MemberID_02, Filler01, Address_1, City, State, Zip, EffectiveDate, TerminationDate, Filler02, Emplstat, DivisionNbr, BusinessUnit, LR_Response, Al
+CenteneRetro.OrphanedClaimsNoEligibility (31): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.OrphanedMemberKeys (7): MatchValue, MatchPriority, MatchKey, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.OrphanedMembers (4): MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.OrphanedMembersWithElig (12): MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, MatchKey, LineKeyID, TapeID, FirstName, LastName, BirthDate, EffectiveDate, TerminationDate
+CenteneRetro.OrphanedMembersWithElig_Ranked (13): MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, MatchKey, TapeID, LineKeyID, EffectiveDate, TerminationDate, FirstName, LastName, BirthDate, ElgRank
+CenteneRetro.OrphansNonGap (31): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.PrepLineKeyAndTapeIds (2): TapeID, LineKeyID
+CenteneRetro.TFS964983_2_CenteneRxRetroTermValidationFile (25): MemberKey, SubscriberKey, TrcMemberID, MemberID, FirstName, LastName, MemberDOB, AlternateId1, AlternateId2, PlanName, PlanState, SSN, LOB, TerminationDate, FirstClaim, LastClaim, Dollars, DaysToClaim, MatchDate, Term Da
+CenteneRetro.TFS964983_AddBlockingFields (30): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.TFS964983_ClaimSoundexMemberKeys (6): SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, DateFilled, ClaimTapeId, ClaimLineKeyId
+CenteneRetro.TFS964983_ClaimTapeLine (5): ClaimTapeId, ClaimLineKeyID, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.TFS964983_Claims (21): Id, PatientKey, ClaimSubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, ClaimRoot, ClaimKey, TotalAmountPaid, DateFilled, OtherCoverageCode, Pharmacy_NPI, Pharmacy_NCPDPID, Quantity, DaysSupply, Date
+CenteneRetro.TFS964983_ClaimsWithNearestEligibility (27): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.TFS964983_ClaimsWithNearestEligibility_Backup (27): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.TFS964983_Claims_backup (21): Id, PatientKey, ClaimSubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, ClaimRoot, ClaimKey, TotalAmountPaid, DateFilled, OtherCoverageCode, Pharmacy_NPI, Pharmacy_NCPDPID, Quantity, DaysSupply, Date
+CenteneRetro.TFS964983_FullEligMemberKeys (14): MemberKey, SoundexMemberKey, FileName, LineKeyID, EffectiveDate, TerminationDate, SubscriberKey, SSN, MemberID, MemberID_01, FirstName, LastName, BirthDate, DivisionNbr
+CenteneRetro.TFS964983_OrphanedClaimsNoEligibility (30): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.TFS964983_OrphansNonGap (30): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.Testing_AddBlockingFields (31): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.Testing_CenteneRxRetroTermValidationFile_SAMPLE (25): MemberKey, SubscriberKey, TrcMemberID, MemberID, FirstName, LastName, MemberDOB, AlternateId1, AlternateId2, PlanName, PlanState, SSN, LOB, TerminationDate, FirstClaim, LastClaim, Dollars, DaysToClaim, MatchDate, Term Da
+CenteneRetro.Testing_ClaimSoundexMemberKeys (6): SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, DateFilled, ClaimTapeId, ClaimLineKeyId
+CenteneRetro.Testing_ClaimTapeLine (5): ClaimTapeId, ClaimLineKeyID, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.Testing_Claims (21): Id, PatientKey, ClaimSubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, ClaimRoot, ClaimKey, TotalAmountPaid, DateFilled, OtherCoverageCode, Pharmacy_NPI, Pharmacy_NCPDPID, Quantity, DaysSupply, Date
+CenteneRetro.Testing_ClaimsWithNearestEligibility (27): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.Testing_ClaimsWithNearestEligibility_Backup (27): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.Testing_Claims_backup (21): Id, PatientKey, ClaimSubscriberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, ClaimRoot, ClaimKey, TotalAmountPaid, DateFilled, OtherCoverageCode, Pharmacy_NPI, Pharmacy_NCPDPID, Quantity, DaysSupply, Date
+CenteneRetro.Testing_FullEligMemberKeys (13): MemberKey, SoundexMemberKey, FileName, LineKeyID, EffectiveDate, TerminationDate, SubscriberKey, SSN, MemberID, FirstName, LastName, BirthDate, DivisionNbr
+CenteneRetro.Testing_OrphanedClaimsNoEligibility (31): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+CenteneRetro.Testing_OrphanedMemberKeys (7): MatchValue, MatchPriority, MatchKey, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.Testing_OrphanedMembers (4): MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3
+CenteneRetro.Testing_OrphanedMembersWithElig (13): MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, MatchKey, LineKeyID, TapeID, FirstName, LastName, BirthDate, EffectiveDate, TerminationDate, DivisionNbr
+CenteneRetro.Testing_OrphanedMembersWithElig_Ranked (14): MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, MatchKey, TapeID, LineKeyID, EffectiveDate, TerminationDate, FirstName, LastName, BirthDate, DivisionNbr, ElgRank
+CenteneRetro.Testing_OrphansNonGap (31): EligFileName, EligLineKeyId, Firstname, LastName, BirthDate, MemberKey, SoundexMemberKey1, SoundexMemberKey2, SoundexMemberKey3, SubscriberKey, SSN, EffectiveDate, TerminationDate, DateFilled, DaysTermToDateFilled, Claim
+ClientPerformanceModel.AetnaRxClaimsLOB1 (9): Paid, ClaimRoot, ClaimKey, Yearloaded, Monthloaded, PatientKey, LOB, LOB2, m-y
+ClientPerformanceModel.CenteneRxClaimsLOB1 (13): Paid, ClaimRoot, ClaimKey, Yearloaded, Monthloaded, PatientKey, LOB, isOIPrime, PartDPrimary, Retro, MSP, MedicaidNotPrime, m-y
+ClientPerformanceModel.ClientPerformanceModel_CenteneRxClaimsLOB1_checker (13): Paid, ClaimRoot, ClaimKey, Yearloaded, Monthloaded, PatientKey, LOB, isOIPrime, PartDPrimary, Retro, MSP, MedicaidNotPrime, m-y
+ClientPerformanceModel.WellCareRxClaimsLOB (10): LineKey, TapeID, TotalAmountPaid, PatientKey, ClaimRoot, Yearloaded, Monthloaded, LOB, LOB2, M-Y
+ClientPerformanceModel.WellCareRxLineKeysTapeIds (2): LineKey, TapeID
+ClientPerformanceModel.WellpointEdwardRXClaimsLOB1 (10): Paid, ClaimRoot, ClaimKey, Yearloaded, Monthloaded, PatientKey, LOB, LOB2, m-y, ClientName
+FrontrunnerTrack.CemTracking (5): ClientName, MatchType, CemOverlapCount, CemTotalCount, CemCompletedCount
+FrontrunnerTrack.ClientBreakout (6): ClientName, MatchType, OiSource, DmiInvestigationCountByOiSource, TotalDollars, TotalExpected
+FrontrunnerTrack.ClientSummary (6): ClientName, DmiInvestigationCount, PctFrNotInCEM, PctFrNotCompleted, PctFrNotSubmitted, PctCEMNotComplete
+FrontrunnerTrack.FrontrunnerBreakout (7): clientname, MatchType, FrontRunnerQueuedCount, FrontRunnerSubmittedCount, FrontRunnerNotSubmittedCount, FrontRunnerNotSubmittedEv, FrontRunnerCompletedCount
+FrontrunnerTrack.FrontrunnerOverThresholdBreakout (5): clientname, MatchType, FrontRunnerOverThresholdCount, FrontRunnerOverThresholdEv, FrontRunnerOverThresholdClaimValue
+FrontrunnerTrack.RxPSummary (4): ClientName, MatchType, InRxpCount, InRxpDollars
+POF.RxCorrectedSSN_Tufts (6): RxPatSSN, RxMemberKey, ClientName, SSNSource, TapeID, LineKeyID
+POF.TuftsMiningResultsHistory (30): ID, MemberFirstName, MemberLastName, MemberDOB, MemberSSN, RxMemberAMI, RxEffectiveDate, RxTerminationDate, RxSubscriberAMI, RxGroupName, OIAMI, OIEffectiveDate, OITerminationDate, OIClientDB, OIGroupName, MiningOverlapS
+POF.TuftsRxPOF (40): ID, MemberFirstName, MemberLastName, MemberDOB, MemberSSN, RxMemberAMI, ClientAMI, MedGroupNumber, MedGroupName, SubscriberFirstName, SubscriberLastName, SubscriberAMI, SubscriberZip, SubscriberDOB, SubscriberSSN, RxEffe
+POF.TuftsRxPOFFiltered (45): ID, MemberFirstName, MemberLastName, MemberDOB, MemberSSN, RxMemberAMI, ClientAMI, MedGroupNumber, MedGroupName, SubscriberFirstName, SubscriberLastName, SubscriberAMI, SubscriberZip, SubscriberDOB, SubscriberSSN, RxEffe
+RetroTerm.BCBSNCClaims (10): ClaimKey, InvestigationID, FirstName, LastName, MemberDOB, MemberKey, DateFilled, TotalAmountPaid, CorrectTerm, SubscriberKey
+RetroTerm.BCBSNCEligPrep (30): ID, InvestigationID, OiSource, CemPrepID, oiSourceID, SourceRank, OiTermDate, OiAMI, AdjOIAMI, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, FirstName, LastName, SubscriberFirst
+RetroTerm.BCBSNCOtherInsurance (19): ID, InvestigationID, ClientName, ClientMemberKey, ClientZip, ClientTerminationDate, OiSource, CemPrepID, OiSourceID, OiClientDb, OiEffectiveDate, OiFirstName, OiLastName, OiAMI, OiDob, OiSSN, OiZip, OiTermDate, SourceRan
+RetroTerm.BCBSNCOtherInsurance_Backup (19): ID, InvestigationID, ClientName, ClientMemberKey, ClientZip, ClientTerminationDate, OiSource, CemPrepID, OiSourceID, OiClientDb, OiEffectiveDate, OiFirstName, OiLastName, OiAMI, OiDob, OiSSN, OiZip, OiTermDate, SourceRan
+RetroTerm.OIMiningResInCem (76): OverlapKey, ClientCode, AMI, SSN, FirstName, LastName, DOB, OtherClientCode, OtherAMI, OtherSSN, OtherFirstName, OtherLastName, OtherDOB, OverlapSource, Score, InsertDate, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Aetna (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_AetnaQNXT (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Anthem (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_BCBSNC (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Carefirst (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Centene (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Elixir (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Elixir_test (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Emblem (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Evernorth (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Excellus (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_HAP (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_NCState (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_NYSHIP (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Oscar (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.PostValidationOI_Tufts (53): OverlapID, PersonKey, SSN, GroupNumber, GroupName, DOB, ClientCode, ClientName, AMI, SubscriberDOB, OverlapSource, CAQHID, POFQueueID, ClQryID, Score, FirstName, LastName, SubscriberFirstName, SubscriberLastName, Subscri
+RetroTerm.RxCollectionsBypass (7): BypassID, ClientName, ClientKey, FieldName, FieldValue, InsertDateTime, RetroPathID
+RetroTerm.RxCollectionsBypassPaths (3): RetroPathID, PathDescription, InsertDateTime
+compliance.AetnaInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.AllClientsInventory_AppDev_ClaimKeys (1): ClaimKey
+compliance.AllClientsInventory_AppDev_FinalTable (6): Client, InvestigationType, MatchType, MemberCount, ClaimCount, TotalClaimValue
+compliance.AppDevProduced (5): PatientKey, ClientKey, ClientName, InvestigationType, DateProduced
+compliance.CenteneFidelisInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.CenteneFidelisInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.CenteneInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.CenteneInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.CignaInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.CignaInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.ComplianceProducedRaw (4): ProducedDate, Patientkey, Matchname, Client
+compliance.DMGComplianceInventory (7): Client, InvestigationType, MatchType, MemberCount, ClaimCount, TotalClaimValue, TotalExpectedValue
+compliance.ElevanceInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.ElevanceInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.ElixirInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.ElixirInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.ExcellusInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.ExcellusInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.HealthNowInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.HealthNowInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+compliance.WellcareInventory_AppDev (6): PatientKey, ClaimKey, TotalAmountPaid, MatchDesc, InvestigationType, MatchedDate
+compliance.WellcareInventory_AppDevProduced (5): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate
+productionreport.AllOverlaps (11): ClientName, PatientKey, OtherAMI, OtherCarrier, InvestigationDesc, OtherEffectiveDate, OtherTermDate, PaidDollars, Claims, MinDOF, MaxDOF
+productionreport.CEM_Definition_Level_Inventory (9): ClientName, QueryType, PatientKey, OtherAMI, OverlappingWindows, ClosedOverlaps, TotalDollarsInOverlap, TotalExpectedValue, Probability
+productionreport.IdentifyTermedOverlaps (14): OtherEffectiveDateRank, WindowRank, ClientName, PatientKey, OtherAMI, OtherCarrier, InvestigationDesc, OtherEffectiveDate, OtherTermDate, PaidDollars, Claims, MinDOF, MaxDOF, HasTermDate
+productionreport.MarkClaimsInsideDistinctWindowsWithinCDV (23): PatOtherAMIRank, PatientKey, ClientKey, ClientName, OtherCarrier, OtherAMI, OTherGroupName, OtherGroupNumber, OtherBIN, OtherPCN, OtherDivision, OtherAccountName, Note, ID, MatchType, MatchDesc, InvestigationType, Invest
+productionreport.MoveClaimsIntoMostLikelyWindow (23): PatOtherAMIRank, PatientKey, ClientKey, ClientName, OtherCarrier, OtherAMI, OTherGroupName, OtherGroupNumber, OtherBIN, OtherPCN, OtherDivision, OtherAccountName, Note, ID, MatchType, MatchDesc, InvestigationType, Invest
+productionreport.ProductionMeeting (9): QueryType, ClientName, Patients, OtherInsurers, Overlaps, ClosedOverlaps, TotalMinedDollars, TotalExpectedValue, Probability
+productionreport.RxSelect_Level_Inventory (9): ClientName, QueryType, PatientKey, OtherInsurers, OverlappingWindows, ClosedOverlaps, TotalDollarsPatient, TotalExpectedValue, Probability
+productionreport.ScoredWindowRanks (26): WindowRank, ID, PatientKey, OtherCarrier, OtherBIN, OtherPCN, OtherGroupname, OtherAccountName, OtherEffectiveDate, OtherTermDate, OtherAMI, OtherGroupNumber, ClientKey, Note, SubSSN, OtherDivision, ClientSecondary, IsCE
+productionreport.WindowRanks (13): WindowRank, ClientName, PatientKey, OtherAMI, OtherCarrier, InvestigationDesc, OtherEffectiveDate, OtherTermDate, PaidDollars, Claims, MinDOF, MaxDOF, HasTermDate
+productionreport.dmgminedinventorypatient_prep (24): ID, PatientKey, OtherCarrier, OtherBIN, OtherPCN, OtherGroupname, OtherAccountName, OtherEffectiveDate, OtherTermDate, OtherAMI, OtherGroupNumber, ClientKey, Note, SubSSN, OtherDivision, ClientSecondary, IsCEM, ClaimTota
+standardized.AetnaInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.AppDevProduced (6): PatientKey, ClientKey, ClientName, InvestigationType, DateProduced, PaidDollars
+standardized.CenteneFidelisInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.CenteneInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.CignaInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.ClinicalFullMinedHistory (8): ClinicalClient, QueryName, clQryID, PatientID, Iteration, DateLoaded, TotalClaimsMined, PaidClaimDollars
+standardized.ClinicalMatchReport (6): MatchReportID, ReportGeneratedDate, MiningRunDate, DailyMiningRunID, ClientName, InvestigationCategory
+standardized.ClinicalMiningRunsInProcess (10): DayMiningRunID, QueryTrackerLoadDate, QueryTrackerLoadYear, QueryTrackerLoadMonth, clQryId, QryID, ClientName, InvestigationCategory, InvestigationType, ThresholdAmount
+standardized.ClinicalMiningRunsInProcess_AllWorkableClaims (27): DayMiningRunID, QueryTrackerLoadDate, QueryTrackerLoadYear, QueryTrackerLoadMonth, clQryId, QryID, ClientName, InvestigationCategory, InvestigationType, ThresholdAmount, QTInvestigationID, PatientID, Iteration, IsRecapPa
+standardized.ClinicalMiningRunsInProcess_Investigations (23): DayMiningRunID, clQryID, qryId, QueryTrackerLoadDate, ClientName, InvestigationCategory, InvestigationType, IsRecapPatient, QTInvestigationID, PatientID, Iteration, Claims, Dollars, FirstDateOfService, LastDateOfService,
+standardized.ComplianceNetNew (6): YearProduced, MonthProduced, ClientName, InvestigationType, NetNewPatients, PaidDollars
+standardized.ComplianceProduced (6): YearProduced, MonthProduced, ClientName, InvestigationType, TotalPatients, PaidDollars
+standardized.DailyClinicalMatchReports (17): ReportGeneratedDate, DayMiningRunID, QueryTrackerLoadDate, clQryID, qryId, ClientName, InvestigationCategory, InvestigationType, NewVsRecap, MinedInvestigations, PaidClaimDollars, WorkableMedicalClaims, ScoredInvestigati
+standardized.DailyClinicalMiningRunSummary (13): ReportGeneratedDate, DayMiningRunID, QueryTrackerLoadDate, ClientName, InvestigationCategory, MinedInvestigations, PaidClaimDollars, WorkableMedicalClaims, ScoredInvestigations, PotentialOPAmount, ExpectedValue, ClaimsIn
+standardized.ElevanceInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.ElixirInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.ExcellusInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.HealthNowInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.TRGClinicalProgram (9): clQryID, qryID, ClientName, ClientDB, AuditTypeID, AuditName, InvestigationCategory, InvestigationType, ThresholdAmount
+standardized.TargetedCOB_Scored_Log (11): LogID, UnitOfWorkID, DateScored, Claims, ClaimDollars, Primacy_Probability, ExpectedValue, OtherCarrier, OtherAMI, Eligbility_Probability, Combined_Probability
+standardized.TargetedCOB_Scored_UnitOfWork (4): ID, PatientKey, ClientKey, InvestigationTypeId
+standardized.TargetedNetNew (5): YearProduced, MonthProduced, ClientName, InvestigationType, NetNewPatients
+standardized.TargetedProduced (5): YearProduced, MonthProduced, ClientName, InvestigationType, TotalPatients
+standardized.WellcareInventory_AppDevProduced (6): PatientKey, ClientKey, MatchDesc, InvestigationType, MatchedDate, PaidDollars
+standardized.tblComplianceNetNew (8): ClientKey, ClientName, InvestigationTypeId, InvestigationType, DateProduced, FirstProducedDate, PaidDollars, PatientKey
+standardized.tblTargetedCOBNetNew (7): PatientKey, ClientKey, CLientName, InvestigationTypeId, InvestigationType, DateProduced, FirstProducedDate
+standardized.vwClinicalNetNewPatients_FullHistory (8): PatientID, clQryID, Iteration, ClinicalClient, QueryName, DateLoaded, YearProduced, MonthProduced
+standardized.vwClinicalNetNewScored (15): InScoringHistory, LatestIDRecord, LatestScoredHistoryRecordID, DateLoaded, ClinicalClient, QueryName, DateScored, PatientID, clQryID, TotalClaimsMined, Claims, PaidClaimDollars, PotentialOPAmount, Probability, ExpectedVa
+standardized.vwClinicalNetNewScoredSummary (15): ClinicalClient, InvestigationType, clQryID, YearProduced, MonthProduced, TotalMinedPatients, TotalScoredPatients, MinScoreDate, MaxScoreDate, TotalClaimsMined, TotalClaimsScored, PaidClaimDollars, PotentialOPAmount, Aver
+standardized.vwClinicalProducedSummary (6): YearProduced, MonthProduced, ClinicalClient, QueryName, NewOrRecap, ProducedInvestigations
+standardized.vwComplianceNetNewPatients_FullHistory (8): PatientKey, ClientKey, InvestigationTypeId, CLientName, InvestigationType, FirstProducedDate, YearProduced, MonthProduced
+standardized.vwComplianceProducedSummary (10): ClientName, InvestigationType, YearProduced, MonthProduced, TotalPatients, NetNew, RecapPatients, TotalDollars, NetNewDollars, RecapDollars
+standardized.vwTargetedCOBNetNewPatients_FullHistory (8): PatientKey, ClientKey, InvestigationTypeId, CLientName, InvestigationType, FirstProducedDate, YearProduced, MonthProduced
+standardized.vwTargetedCOBNetNewScored (14): InScoringHistory, UnitOfWorkID, PatientKey, ClientKey, InvestigationTypeId, FirstProducedDate, MostRecentScoreLogID, DateScored, Claims, ClaimDollars, Primacy_Probability, ExpectedValue, OtherCarrier, OtherAMI
+standardized.vwTargetedCOBNetNewScoredSummary (11): ClientName, InvestigationType, YearProduced, MonthProduced, TotalPatients, MinScoreDate, MaxScoreDate, TotalClaims, ClaimDollars, AveragePrimacyProbability, ExpectedValue
+standardized.vwTargetedCOBProducedSummary (7): ClientName, InvestigationType, YearProduced, MonthProduced, TotalPatients, NetNew, RecapPatients
+DONE

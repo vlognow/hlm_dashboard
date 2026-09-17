@@ -1,0 +1,31 @@
+ReportBucket,InvestigationType,n,recovered
+Other,COBC OI Primary to Part D,2915,329993496.86
+Other,Converted Compliance Fee,514,191959227.00901863
+Other,OI Prime,2580,137665547.12
+Other,Post Term,3528,114266107.7
+Other,RxMedical,31376,98123867.86
+Humana/OptumUHC,MC Part D Secondary,79,59005550.89
+Humana/OptumUHC,COBC OI Primary to Part D,69,53608089.52
+Other,Medicaid Not Primary,566,42231092.03
+Other,Part D Primary to Commercial,524,16346027.65
+Other,MC Part D Secondary,1103,15509589.16
+Humana/OptumUHC,Post Term,667,10611825.78
+Other,Hospice Primary to Part D,2019,9805345.05
+Humana/OptumUHC,Converted Compliance Fee,18,3640472.727309409
+Other,LTI Primary to Part D,304,1592911.68
+Other,TPL Primary to Part D,952,790368.99
+Other,ESRD Primary to Part D,156,619558.77
+Humana/OptumUHC,Hospice Primary to Part D,25,593602.45
+Humana/OptumUHC,B vs D Compliance,6,400208.57
+Humana/OptumUHC,OI Prime,22,142552.99
+Humana/OptumUHC,ESRD Primary to Part D,15,115656.68
+Other,Workers Comp Primary to Part D,74,98792.72
+Other,Auto/No Fault Primary to Part D,301,88648.57
+Humana/OptumUHC,LTI Primary to Part D,7,76346.31
+Other,Medicare B,7,72923.33
+Humana/OptumUHC,TPL Primary to Part D,20,72774.62
+Humana/OptumUHC,Medicare B,5,37339.43
+Humana/OptumUHC,Auto/No Fault Primary to Part D,18,19416.97
+Other,MC B On D,6,19097.57
+Humana/OptumUHC,Workers Comp Primary to Part D,6,2351.03
+Humana/OptumUHC,MC B On D,1,305.4
